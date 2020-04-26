@@ -29,6 +29,19 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164669307-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-164669307-1');
+  </script>
+
 </head>
 
 <body>
@@ -191,7 +204,7 @@
 
     // convert the positions from a lat, lon to a position on a sphere.
     function latLongToVector3(lat, lon, radius) {
-      var phi = (90-lat) * Math.PI / 180;
+      var phi = (90 - lat) * Math.PI / 180;
       var theta = (lon + 180) * Math.PI / 180;
       var x = -((radius) * Math.cos(phi) * Math.cos(theta));
       var y = ((radius) * Math.sin(phi));
