@@ -1,29 +1,30 @@
-<!DOCTYPE HTML>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
 <head>
-  <title>3D Map of Covid19</title>
-  <link type="text/css" href="style.css" rel="stylesheet" />
-  <script type="text/javascript" src="three.js"></script>
-  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+  <title>3D Map of COVID-19</title>
+  <script type="text/javascript" src="js/three.js"></script>
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <link type="text/css" href="css/css-style.css" rel="stylesheet">
 </head>
 
 <body>
   <h1 class="page-header">
-    3D Map of Covid: 2020
+    3D MAP OF COVID-19
   </h1>
+  <br>
   <div class="explanation">
-    This page shows the confirmed cases throughout the world. The height of the column represents
-    the amount of cases in that specific area. Please be patient
-    while loading and processing the density data (18.000 points). To view this page you need to have a browser that
-    support WebGL (like newer versions of Firefox, Chrome or Opera).
+    This page shows the number of confirmed cases throughout the world. The height of the column represents
+    the number of cases in that specific area. Please be patient
+    while loading and processing the density data (+18,000 points). To view this page you need to have a browser that
+    supports WebGL.
   </div>
-  <div id="model">
+  <div id="globe">
   </div>
   <div class="explanation">
     This map is based on open data. The earth map is based on a download from
-    <a href="https://earthobservatory.nasa.gov/.">the Nasa Earth observatory</a>. The Covid related information
-    was downloaded from <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports"> the CSSEGISandData Github Repository</a>.
+    <a id="link" href="https://earthobservatory.nasa.gov/.">the Nasa Earth observatory</a>. The density information
+    was downloaded from <a id="link" href="https://github.com/CSSEGISandData/COVID-19"> the CSSEGISandData Github Repository</a>.
   </div>
 
   <script type="text/javascript">
@@ -33,21 +34,23 @@
     var POS_Z = 1800;
     var WIDTH = 1000;
     var HEIGHT = 600;
+
     var FOV = 45;
     var NEAR = 1;
     var FAR = 4000;
+
     // some global variables and initialization code
     // simple basic renderer
-    var mapDiv = document.getElementById("model");
     var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(mapDiv.clientWidth, mapDiv.clientHeight);
+    renderer.setSize(WIDTH, HEIGHT);
     renderer.setClearColorHex(0x111111);
 
     // add it to the target element
+    var mapDiv = document.getElementById("globe");
     mapDiv.appendChild(renderer.domElement);
 
     // setup a camera that points to the center
-    var camera = new THREE.PerspectiveCamera(FOV, mapDiv.clientWidth / mapDiv.clientHeight, NEAR, FAR);
+    var camera = new THREE.PerspectiveCamera(FOV, WIDTH / HEIGHT, NEAR, FAR);
     camera.position.set(POS_X, POS_Y, POS_Z);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
@@ -58,7 +61,7 @@
     // we wait until the document is loaded before loading the
     // density data.
     $(document).ready(function() {
-      jQuery.get('density.csv', function(data) {
+      jQuery.get('data/density.csv', function(data) {
         addDensity(CSVToArray(data));
         addLights();
         addEarth();
@@ -120,7 +123,7 @@
     // add the earth
     function addEarth() {
       var spGeo = new THREE.SphereGeometry(600, 50, 50);
-      var planetTexture = THREE.ImageUtils.loadTexture("world-big-2-grey.jpg");
+      var planetTexture = THREE.ImageUtils.loadTexture("assets/world-big-2-grey.jpg");
       var mat2 = new THREE.MeshPhongMaterial({
         map: planetTexture,
         perPixel: false,
@@ -133,7 +136,7 @@
     // add clouds
     function addClouds() {
       var spGeo = new THREE.SphereGeometry(600, 50, 50);
-      var cloudsTexture = THREE.ImageUtils.loadTexture("earth_clouds_1024.png");
+      var cloudsTexture = THREE.ImageUtils.loadTexture("assets/earth_clouds_1024.png");
       var materialClouds = new THREE.MeshPhongMaterial({
         color: 0xffffff,
         map: cloudsTexture,

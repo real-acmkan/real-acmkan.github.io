@@ -1,25 +1,30 @@
 body {
     background-color: #111;
+
 }
 
 .explanation {
-    font-family: verdana;
-    color: #CCC;
+    background-color: #1f75fe;
+    font-family: 'Raleway',sans-serif;
+    color: #ffffff;
     margin-left: auto;
     margin-right: auto;
     width: 900px;
     margin-bottom: 5px;
-    font-size: x-small;
+    font-size: 13px;
+    font-weight: 800;
     padding-bottom: 5px;
+    padding: 16px;
+    border-radius: 20px;
 }
 
 .page-header {
-    font-family: helvetica;
-    font-weight: lighter;
-    color: #CCCCCC;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 800;
+    color: #ffffff;
     font-style: normal;
     text-align: center;
-    font-size: xx-large;
+    font-size: 30px;
     margin: 0px;
 }
 
@@ -41,6 +46,10 @@ html {
     margin-right: auto;
     width: 1000px;
     height: 600px;
+}
+
+#link {
+  color: #333
 }
 
 div {
