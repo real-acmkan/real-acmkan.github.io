@@ -1,0 +1,13 @@
+body {
+  background-color: #112;
+}
+
+div {
+  background-color: #111;
+}
+
+#model {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
