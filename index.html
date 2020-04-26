@@ -33,13 +33,14 @@
 
 <body>
   <h1 class="page-header">
-    3D MAP OF COVID-19 <a href="https://twitter.com/sk3rts?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @sk3rts</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    3D MAP OF COVID-19 <a href="https://twitter.com/sk3rts?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @sk3rts</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </h1>
   <br>
   <div class="explanation">
     This page shows the number of confirmed cases throughout the world. The height of the column represents
     the number of cases in that specific area. Please be patient
-    while loading and processing the density data (+18,000 points). To view this page you need to have a browser that
+    while loading and processing the density data (+3,000 points). To view this page you need to have a browser that
     supports WebGL.
   </div>
   <div id="globe">
@@ -57,7 +58,7 @@
     var WIDTH = 1000;
     var HEIGHT = 600;
 
-    var FOV = 45;
+    var FOV = 75;
     var NEAR = 1;
     var FAR = 4000;
 
@@ -82,8 +83,24 @@
 
     // we wait until the document is loaded before loading the
     // density data.
+    var today = new Date();
+    var dd = today.getDate();
+
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    var h = dd - 1
+    //today = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/' + mm + '-' + h + '-' + yyyy + '.csv';
+
     $(document).ready(function() {
-      jQuery.get('data/density.csv', function(data) {
+      jQuery.get('data/04-25-2020.csv', function(data) {
+        //var parsedCSV = d3.csv.parseRows(data);
         addDensity(CSVToArray(data));
         addLights();
         addEarth();
@@ -109,10 +126,11 @@
 
         //get the data, and set the offset, we need to do this since the x,y coordinates
         //from the data aren't in the correct format
-        var x = parseInt(data[i][0]) + 180;
-        var y = parseInt((data[i][1]) - 84) * -1;
-        var value = parseFloat(data[i][2]);
-
+        var x = parseInt(data[i][5]); //+ 180
+        var y = parseInt(data[i][6]); //parseInt((data[i][6]) - 84) * -1
+        var value = parseFloat(data[i][7]);
+        console.log(x);
+        console.log(y);
         // calculate the position where we need to start the cube
         var position = latLongToVector3(y, x, 600, 2);
 
@@ -172,13 +190,12 @@
     }
 
     // convert the positions from a lat, lon to a position on a sphere.
-    function latLongToVector3(lat, lon, radius, heigth) {
-      var phi = (lat) * Math.PI / 180;
-      var theta = (lon - 180) * Math.PI / 180;
-
-      var x = -(radius + heigth) * Math.cos(phi) * Math.cos(theta);
-      var y = (radius + heigth) * Math.sin(phi);
-      var z = (radius + heigth) * Math.cos(phi) * Math.sin(theta);
+    function latLongToVector3(lat, lon, radius) {
+      var phi = (90-lat) * Math.PI / 180;
+      var theta = (lon + 180) * Math.PI / 180;
+      var x = -((radius) * Math.cos(phi) * Math.cos(theta));
+      var y = ((radius) * Math.sin(phi));
+      var z = ((radius) * Math.cos(phi) * Math.sin(theta));
 
       return new THREE.Vector3(x, y, z);
     }
