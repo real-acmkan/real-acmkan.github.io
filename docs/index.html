@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Live coronavirus 3D Model. See data, and learn about prevention measures." />
+  <meta name="keywords" content="coronavirus, covid-19, tracker, dashboard, preperation, prevention, trends, statistics, data, 3D, COVID, global, crisis, help, model, prediction" />
+  <meta property="og:description" content="COVID-19 3D Visualization.">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://i.imgur.com/1AFEXhs.png">
+  <title>COVID-19 3D</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/main.0fa6303c.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164669307-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-164669307-1');
+  </script>
+</head>
+
+<body>
+  <div id="globeViz"></div>
+  <div class="top-info-container">
+    <div class="title">COVID-19</div>
+    <div class="title-desc"> Loading countries affected by the virus... </div>
+  </div>
+  <div class="bottom-info-container">
+    <div style="display:flex;justify-content:center;">
+      <div class="timeline-container"> <button disabled style="margin-right:10px;" class="play-button"> Play </button> <input class="slider" disabled type="range" min="0" max="1" step="1"> <span style="font-size:14px;color:#ccd6f6;"
+          class="slider-date"></span> </div>
+    </div>
+    <div style="font-size:14px;color:#ccd6f6;margin-top:35px;"> Total Counts <span class="updated"></span> </div>
+    <div style="color:#e6f1ff;padding:0 5px;"> INFECTED: <span id="infected">0</span> • DEATHS: <span id="deaths">0</span> • RECOVERED: <span id="recovered">0</span> </div>
+    <button class="trigger fa fa-info-circle"></button>
+    <div style="margin-top:5px;" class="modal"><div class="modal-content"><span class="close-button">&times;</span><h1>What is this?</h1><br><p>This site is a fully interactive visualization of nCovid19. Click the link below for more info</p><br><a href='/info.html'>Site Info</a></div></div>
+  </div>
+  <script src="/app.23351e3e.js"></script>
+  <script>
+  // When the user clicks on div, open the popup
+  var modal = document.querySelector(".modal");
+  var trigger = document.querySelector(".trigger");
+  var closeButton = document.querySelector(".close-button");
+
+  function toggleModal() {
+    modal.classList.toggle("show-modal");
+  }
+
+  function windowOnClick(event) {
+    if (event.target === modal) {
+      toggleModal();
+    }
+  }
+
+  trigger.addEventListener("click", toggleModal);
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
+  </script>
+</body>
+
+</html>
+
+
+<!--href="https://github.com/sorxrob/covid-3d" rel="noopener noreferrer" target="_BLANK">
