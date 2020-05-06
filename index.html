@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,21 +22,20 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164669307-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', 'UA-164669307-1');
   </script>
 </head>
-
 <body>
   <div id="globeViz"></div>
   <div class="top-info-container">
     <div class="title">COVID-19</div>
     <div class="title-desc"> Loading countries affected by the virus... </div>
+  </div>
+  <div id="loader">
   </div>
   <div class="bottom-info-container">
     <div style="display:flex;justify-content:center;">
@@ -55,21 +53,17 @@
   var modal = document.querySelector(".modal");
   var trigger = document.querySelector(".trigger");
   var closeButton = document.querySelector(".close-button");
-
   function toggleModal() {
     modal.classList.toggle("show-modal");
   }
-
   function windowOnClick(event) {
     if (event.target === modal) {
       toggleModal();
     }
   }
-
   trigger.addEventListener("click", toggleModal);
   closeButton.addEventListener("click", toggleModal);
   window.addEventListener("click", windowOnClick);
   </script>
 </body>
-
 </html>
