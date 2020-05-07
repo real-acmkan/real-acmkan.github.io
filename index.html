@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#000" />
   <meta name="description" content="Live coronavirus 3D Model. See data, and learn about prevention measures." />
-  <meta name="keywords" content="coronavirus, covid-19, tracker, dashboard, preperation, prevention, trends, statistics, data, 3D, COVID, global, crisis, help, model, prediction, seethespread, see the, the spread, see the spread, covid statistics, covid visualized, covid 3D, covid data" />
+  <meta name="keywords" content="sk3rts, acmkan, real-acmkan, coronavirus, covid-19, tracker, dashboard, preperation, prevention, trends, statistics, data, 3D, COVID, global, crisis, help, model, prediction, seethespread, see the, the spread, see the spread, covid statistics, covid visualized, covid 3D, covid data" />
   <meta property="og:description" content="COVID-19 3D Visualization.">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,10 +32,11 @@
 <body>
   <div id="globeViz"></div>
   <div class="top-info-container">
-    <div class="title">COVID-19</div>
-    <div class="title-desc"> Loading countries affected by the virus... </div>
-  </div>
-  <div id="loader">
+    <div class="title">COVID-19 <button class="fired fa fa-question-circle" style="position: absolute; right: auto;"></button></div>
+    <div class="title-desc"> Loading countries affected by the virus...</div>
+    <div class="menu-bar" style="margin-top:5px;">
+      <div class="menu-bar-content"><span class="closer">&times;</span><h1>Quick Facts:</h1><p> Covid-19 can be transmitted via touch/physical interaction, as well as through sneezing and coughing. Use a mask when in public, and wash your hands frequenty. Currently there is no cure. This site will be undergoing frequent updates, check back for more information.</p></div>
+    </div>
   </div>
   <div class="bottom-info-container">
     <div style="display:flex;justify-content:center;">
@@ -45,23 +46,33 @@
     <div style="font-size:14px;color:#ccd6f6;margin-top:35px;"> Total Counts <span class="updated"></span> </div>
     <div style="color:#e6f1ff;padding:0 5px;"> INFECTED: <span id="infected">0</span> • DEATHS: <span id="deaths">0</span> • RECOVERED: <span id="recovered">0</span> </div>
     <button class="trigger fa fa-info-circle"></button>
-    <div style="margin-top:5px;" class="modal"><div class="modal-content"><span class="close-button">&times;</span><h1>What is this?</h1><br><p>This site is a fully interactive visualization of Covid-19. Click the link below for more info</p><br><a href='/info.html'>Site Info</a></div></div>
+    <div style="margin-top:5px;" class="modal"><div class="modal-content"><span class="close-button">&times;</span><h1>Where are the statistics from?</h1><p>This collects the latest and most accurate data. Data is used from the previous day until all new information can be confirmed. For information about the site click the link below for more info</p><a href='/info.html'>Site Info</a></div></div>
   </div>
-  <script src="/app.23351e3e.js"></script>
+  <script src="/app.1b738189.js"></script>
   <script>
   // When the user clicks on div, open the popup
   var modal = document.querySelector(".modal");
+  var menu = document.querySelector(".menu-bar");
   var trigger = document.querySelector(".trigger");
+  var opener = document.querySelector(".fired");
+  var closer = document.querySelector(".closer");
   var closeButton = document.querySelector(".close-button");
   function toggleModal() {
     modal.classList.toggle("show-modal");
   }
+  function fireModal(){
+    menu.classList.toggle("show-modal");
+  }
   function windowOnClick(event) {
     if (event.target === modal) {
       toggleModal();
+    } else if (event.target === menu) {
+      fireModal();
     }
   }
   trigger.addEventListener("click", toggleModal);
+  opener.addEventListener("click", fireModal);
+  closer.addEventListener("click", fireModal);
   closeButton.addEventListener("click", toggleModal);
   window.addEventListener("click", windowOnClick);
   </script>
