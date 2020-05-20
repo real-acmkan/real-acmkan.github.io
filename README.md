@@ -2,6 +2,8 @@
 3D Map of Covid, updated every day.
 
 # Change log
+## 2020-05-20
+• Fixed an issue with data formatting on the dashboard.
 ## 2020-05-19
 • Updated UI and release of Dashboard!
 ## 2020-05-12
