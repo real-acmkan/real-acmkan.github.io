@@ -2,6 +2,8 @@
 3D Map of Covid, updated every day.
 
 # Change log
+## 2020-05-19
+• Updated UI and release of Dashboard!
 ## 2020-05-12
 • Improved SEO
 ## 2020-05-08
