@@ -1,0 +1,6159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#000" />
+  <meta name="description" content="See the spread of coronavirus. Live coronavirus 3D Model. See data, and learn about prevention measures. Track the global spread of COVID-19 on an interactive 3D map." />
+  <meta name="keywords"
+    content="sk3rts, acmkan, real-acmkan, coronavirus, covid-19, tracker, dashboard, preperation, prevention, trends, statistics, data, 3D, COVID, global, crisis, help, model, prediction, seethespread, see the, the spread, see the spread, covid statistics, covid visualized, covid 3D, covid data" />
+  <meta property="og:description" content="COVID-19 3D Visualization.">
+  <link href="https://seethespread.com/dashboard.html" rel="canonical" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://i.imgur.com/1AFEXhs.png">
+  <title>COVID-19 3D</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/main.0fa6303c.css">
+  <script data-ad-client="ca-pub-2456189998181272" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164669307-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-164669307-1');
+  </script>
+</head>
+<body>
+  <div id="globeViz"></div>
+  <div class="top-info-container">
+    <div class="title dropdown">COVID-19 <button onclick="show();" class="dropbtn fa fa-bars"></button>
+      <div id="Dropdown1" class="dropdown-content"><a href="/dashboard.html">Dashboard</a><a href="/info.html">Site Info</a></div>
+    </div>
+    <div class="title-desc"> Loading countries affected by the virus...</div>
+  </div>
+  <div class="bottom-info-container">
+    <div style="display:flex;justify-content:center;">
+      <div class="timeline-container"> <button disabled style="margin-right:10px;" class="play-button"> Play </button> <input class="slider" disabled type="range" min="0" max="1" step="1"> <span style="font-size:14px;color:#ccd6f6;"
+          class="slider-date"></span> </div>
+    </div>
+    <div style="font-size:14px;color:#ccd6f6;margin-top:35px;"> Total Counts <span class="updated"></span> </div>
+    <div style="color:#e6f1ff;padding:0 5px;"> INFECTED: <span id="infected">0</span> • DEATHS: <span id="deaths">0</span> • RECOVERED: <span id="recovered">0</span> </div>
+    <button class="trigger fa fa-info-circle"></button>
+    <div style="margin-top:5px;" class="modal">
+      <div class="modal-content"><span class="close-button">&times;</span>
+        <h1>Where is the data from?</h1>
+        <p>   We collect the latest and most accurate data. Data is used from the previous day until all new information can be confirmed.</p><a href='/info.html' onclick="toggleModal();" style="color: #ffffff; font-weight: bold;">Site Info</a>
+      </div>
+    </div>
+  </div>
+  <noscript>
+    <p>
+
+    Oh no! Your browser has javascript disabled,
+    Don't fear, we still have the data available for you.
+    It's in it's raw format, and may look a little messy.
+    I've tried to link all the country flags below just in case you
+    wanted them. Numbers could not be localized or formatted,
+    as the site is served statically (dynamic hosting costs lots!).
+
+    If you're reading this and are not a robot, please contact me at
+    info@seethespread.com, with the subject as noscript if you have further questions.
+
+
+    The data below is structured in the following:
+
+    Time of last update,
+    Country,
+    Country Info,
+      id,
+      iso2,
+      iso3,
+      lat,
+      long,
+      flag,
+
+    Cases,
+    New cases,
+    Deaths,
+    New Deaths,
+    recovered,
+    active,
+    critical,
+    casesPerOneMillion,
+    deathsPerOneMillion,
+    tests,
+    testsPerOneMillion,
+    population,
+    continent,
+    activePerOneMillion,
+    recoveredPerOneMillion,
+    criticalPerOneMillion
+
+    Last updated: 1590076993518,
+    Country: Afghanistan,
+    Country Info:
+      id: 4,
+      iso2: AF,
+      iso3: AFG,
+      Latitude: 33,
+      Longitude: 65,
+      <a>flag: https://disease.sh/assets/img/flags/af.png</a>
+
+    Cases: 8676,
+    New Cases: 531,
+    Deaths: 193,
+    New Deaths: 6,
+    recovered: 938,
+    active: 7545,
+    critical: 19,
+    casesPerOneMillion: 223,
+    deathsPerOneMillion: 5,
+    tests: 26707,
+    testsPerOneMillion: 688,
+    population: 38822151,
+    continent: Asia,
+    activePerOneMillion: 194.35,
+    recoveredPerOneMillion: 24.16,
+    criticalPerOneMillion: 0.49
+
+
+    Last updated: 1590076993596,
+    Country: Albania,
+    Country Info:
+      id: 8,
+      iso2: AL,
+      iso3: ALB,
+      Latitude: 41,
+      Longitude: 20,
+      <a>flag: https://disease.sh/assets/img/flags/al.png</a>
+
+    Cases: 969,
+    New Cases: 5,
+    Deaths: 31,
+    New Deaths: 0,
+    recovered: 771,
+    active: 167,
+    critical: 3,
+    casesPerOneMillion: 337,
+    deathsPerOneMillion: 11,
+    tests: 12759,
+    testsPerOneMillion: 4433,
+    population: 2878137,
+    continent: Europe,
+    activePerOneMillion: 58.02,
+    recoveredPerOneMillion: 267.88,
+    criticalPerOneMillion: 1.04
+
+
+    Last updated: 1590076993527,
+    Country: Algeria,
+    Country Info:
+      id: 12,
+      iso2: DZ,
+      iso3: DZA,
+      Latitude: 28,
+      Longitude: 3,
+      <a>flag: https://disease.sh/assets/img/flags/dz.png</a>
+
+    Cases: 7728,
+    New Cases: 186,
+    Deaths: 575,
+    New Deaths: 7,
+    recovered: 4062,
+    active: 3091,
+    critical: 22,
+    casesPerOneMillion: 177,
+    deathsPerOneMillion: 13,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 43757106,
+    continent: Africa,
+    activePerOneMillion: 70.64,
+    recoveredPerOneMillion: 92.83,
+    criticalPerOneMillion: 0.5
+
+
+    Last updated: 1590076993608,
+    Country: Andorra,
+    Country Info:
+      id: 20,
+      iso2: AD,
+      iso3: AND,
+      Latitude: 42.5,
+      Longitude: 1.6,
+      <a>flag: https://disease.sh/assets/img/flags/ad.png</a>
+
+    Cases: 762,
+    New Cases: 0,
+    Deaths: 51,
+    New Deaths: 0,
+    recovered: 639,
+    active: 72,
+    critical: 3,
+    casesPerOneMillion: 9864,
+    deathsPerOneMillion: 660,
+    tests: 3750,
+    testsPerOneMillion: 48543,
+    population: 77251,
+    continent: Europe,
+    activePerOneMillion: 932.03,
+    recoveredPerOneMillion: 8271.74,
+    criticalPerOneMillion: 38.83
+
+
+    Last updated: 1590076993708,
+    Country: Angola,
+    Country Info:
+      id: 24,
+      iso2: AO,
+      iso3: AGO,
+      Latitude: -12.5,
+      Longitude: 18.5,
+      <a>flag: https://disease.sh/assets/img/flags/ao.png</a>
+
+    Cases: 58,
+    New Cases: 6,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 17,
+    active: 38,
+    critical: 0,
+    casesPerOneMillion: 2,
+    deathsPerOneMillion: 0.09,
+    tests: 6136,
+    testsPerOneMillion: 187,
+    population: 32737396,
+    continent: Africa,
+    activePerOneMillion: 1.16,
+    recoveredPerOneMillion: 0.52,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993742,
+    Country: Anguilla,
+    Country Info:
+      id: 660,
+      iso2: AI,
+      iso3: AIA,
+      Latitude: 18.25,
+      Longitude: -63.1667,
+      <a>flag: https://disease.sh/assets/img/flags/ai.png</a>
+
+    Cases: 3,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 3,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 200,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 14988,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 200.16,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993717,
+    Country: Antigua and Barbuda,
+    Country Info:
+      id: 28,
+      iso2: AG,
+      iso3: ATG,
+      Latitude: 17.05,
+      Longitude: -61.8,
+      <a>flag: https://disease.sh/assets/img/flags/ag.png</a>
+
+    Cases: 25,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 19,
+    active: 3,
+    critical: 1,
+    casesPerOneMillion: 256,
+    deathsPerOneMillion: 31,
+    tests: 183,
+    testsPerOneMillion: 1870,
+    population: 97837,
+    continent: North America,
+    activePerOneMillion: 30.66,
+    recoveredPerOneMillion: 194.2,
+    criticalPerOneMillion: 10.22
+
+
+    Last updated: 1590076993516,
+    Country: Argentina,
+    Country Info:
+      id: 32,
+      iso2: AR,
+      iso3: ARG,
+      Latitude: -34,
+      Longitude: -64,
+      <a>flag: https://disease.sh/assets/img/flags/ar.png</a>
+
+    Cases: 9283,
+    New Cases: 0,
+    Deaths: 403,
+    New Deaths: 0,
+    recovered: 2933,
+    active: 5947,
+    critical: 154,
+    casesPerOneMillion: 206,
+    deathsPerOneMillion: 9,
+    tests: 112370,
+    testsPerOneMillion: 2489,
+    population: 45148586,
+    continent: South America,
+    activePerOneMillion: 131.72,
+    recoveredPerOneMillion: 64.96,
+    criticalPerOneMillion: 3.41
+
+
+    Last updated: 1590076993540,
+    Country: Armenia,
+    Country Info:
+      id: 51,
+      iso2: AM,
+      iso3: ARM,
+      Latitude: 40,
+      Longitude: 45,
+      <a>flag: https://disease.sh/assets/img/flags/am.png</a>
+
+    Cases: 5606,
+    New Cases: 335,
+    Deaths: 70,
+    New Deaths: 3,
+    recovered: 2581,
+    active: 2955,
+    critical: 10,
+    casesPerOneMillion: 1892,
+    deathsPerOneMillion: 24,
+    tests: 45822,
+    testsPerOneMillion: 15467,
+    population: 2962634,
+    continent: Asia,
+    activePerOneMillion: 997.42,
+    recoveredPerOneMillion: 871.18,
+    criticalPerOneMillion: 3.38
+
+
+    Last updated: 1590076993689,
+    Country: Aruba,
+    Country Info:
+      id: 533,
+      iso2: AW,
+      iso3: ABW,
+      Latitude: 12.5,
+      Longitude: -69.9667,
+      <a>flag: https://disease.sh/assets/img/flags/aw.png</a>
+
+    Cases: 101,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 95,
+    active: 3,
+    critical: 4,
+    casesPerOneMillion: 946,
+    deathsPerOneMillion: 28,
+    tests: 2048,
+    testsPerOneMillion: 19191,
+    population: 106716,
+    continent: North America,
+    activePerOneMillion: 28.11,
+    recoveredPerOneMillion: 890.21,
+    criticalPerOneMillion: 37.48
+
+
+    Last updated: 1590076993531,
+    Country: Australia,
+    Country Info:
+      id: 36,
+      iso2: AU,
+      iso3: AUS,
+      Latitude: -27,
+      Longitude: 133,
+      <a>flag: https://disease.sh/assets/img/flags/au.png</a>
+
+    Cases: 7081,
+    New Cases: 2,
+    Deaths: 100,
+    New Deaths: 0,
+    recovered: 6472,
+    active: 509,
+    critical: 9,
+    casesPerOneMillion: 278,
+    deathsPerOneMillion: 4,
+    tests: 1137684,
+    testsPerOneMillion: 44675,
+    population: 25465832,
+    continent: Australia/Oceania,
+    activePerOneMillion: 19.99,
+    recoveredPerOneMillion: 254.14,
+    criticalPerOneMillion: 0.35
+
+
+    Last updated: 1590076993505,
+    Country: Austria,
+    Country Info:
+      id: 40,
+      iso2: AT,
+      iso3: AUT,
+      Latitude: 47.3333,
+      Longitude: 13.3333,
+      <a>flag: https://disease.sh/assets/img/flags/at.png</a>
+
+    Cases: 16404,
+    New Cases: 51,
+    Deaths: 633,
+    New Deaths: 0,
+    recovered: 14951,
+    active: 820,
+    critical: 32,
+    casesPerOneMillion: 1823,
+    deathsPerOneMillion: 70,
+    tests: 385637,
+    testsPerOneMillion: 42845,
+    population: 9000647,
+    continent: Europe,
+    activePerOneMillion: 91.1,
+    recoveredPerOneMillion: 1661.1,
+    criticalPerOneMillion: 3.56
+
+
+    Last updated: 1590076993543,
+    Country: Azerbaijan,
+    Country Info:
+      id: 31,
+      iso2: AZ,
+      iso3: AZE,
+      Latitude: 40.5,
+      Longitude: 47.5,
+      <a>flag: https://disease.sh/assets/img/flags/az.png</a>
+
+    Cases: 3749,
+    New Cases: 118,
+    Deaths: 44,
+    New Deaths: 1,
+    recovered: 2340,
+    active: 1365,
+    critical: 42,
+    casesPerOneMillion: 370,
+    deathsPerOneMillion: 4,
+    tests: 252496,
+    testsPerOneMillion: 24929,
+    population: 10128787,
+    continent: Asia,
+    activePerOneMillion: 134.76,
+    recoveredPerOneMillion: 231.02,
+    criticalPerOneMillion: 4.15
+
+
+    Last updated: 1590076993692,
+    Country: Bahamas,
+    Country Info:
+      id: 44,
+      iso2: BS,
+      iso3: BHS,
+      Latitude: 24.25,
+      Longitude: -76,
+      <a>flag: https://disease.sh/assets/img/flags/bs.png</a>
+
+    Cases: 97,
+    New Cases: 0,
+    Deaths: 11,
+    New Deaths: 0,
+    recovered: 43,
+    active: 43,
+    critical: 1,
+    casesPerOneMillion: 247,
+    deathsPerOneMillion: 28,
+    tests: 1826,
+    testsPerOneMillion: 4648,
+    population: 392816,
+    continent: North America,
+    activePerOneMillion: 109.47,
+    recoveredPerOneMillion: 109.47,
+    criticalPerOneMillion: 2.55
+
+
+    Last updated: 1590076993520,
+    Country: Bahrain,
+    Country Info:
+      id: 48,
+      iso2: BH,
+      iso3: BHR,
+      Latitude: 26,
+      Longitude: 50.55,
+      <a>flag: https://disease.sh/assets/img/flags/bh.png</a>
+
+    Cases: 8039,
+    New Cases: 151,
+    Deaths: 12,
+    New Deaths: 0,
+    recovered: 3715,
+    active: 4312,
+    critical: 9,
+    casesPerOneMillion: 4746,
+    deathsPerOneMillion: 7,
+    tests: 260897,
+    testsPerOneMillion: 154013,
+    population: 1693992,
+    continent: Asia,
+    activePerOneMillion: 2545.47,
+    recoveredPerOneMillion: 2193.04,
+    criticalPerOneMillion: 5.31
+
+
+    Last updated: 1590076993490,
+    Country: Bangladesh,
+    Country Info:
+      id: 50,
+      iso2: BD,
+      iso3: BGD,
+      Latitude: 24,
+      Longitude: 90,
+      <a>flag: https://disease.sh/assets/img/flags/bd.png</a>
+
+    Cases: 28511,
+    New Cases: 1773,
+    Deaths: 408,
+    New Deaths: 22,
+    recovered: 5602,
+    active: 22501,
+    critical: 1,
+    casesPerOneMillion: 173,
+    deathsPerOneMillion: 2,
+    tests: 214114,
+    testsPerOneMillion: 1302,
+    population: 164502000,
+    continent: Asia,
+    activePerOneMillion: 136.78,
+    recoveredPerOneMillion: 34.05,
+    criticalPerOneMillion: 0.01
+
+
+    Last updated: 1590076993695,
+    Country: Barbados,
+    Country Info:
+      id: 52,
+      iso2: BB,
+      iso3: BRB,
+      Latitude: 13.1667,
+      Longitude: -59.5333,
+      <a>flag: https://disease.sh/assets/img/flags/bb.png</a>
+
+    Cases: 90,
+    New Cases: 0,
+    Deaths: 7,
+    New Deaths: 0,
+    recovered: 70,
+    active: 13,
+    critical: 4,
+    casesPerOneMillion: 313,
+    deathsPerOneMillion: 24,
+    tests: 4322,
+    testsPerOneMillion: 15042,
+    population: 287336,
+    continent: North America,
+    activePerOneMillion: 45.24,
+    recoveredPerOneMillion: 243.62,
+    criticalPerOneMillion: 13.92
+
+
+    Last updated: 1590076993482,
+    Country: Belarus,
+    Country Info:
+      id: 112,
+      iso2: BY,
+      iso3: BLR,
+      Latitude: 53,
+      Longitude: 28,
+      <a>flag: https://disease.sh/assets/img/flags/by.png</a>
+
+    Cases: 33371,
+    New Cases: 945,
+    Deaths: 185,
+    New Deaths: 6,
+    recovered: 12057,
+    active: 21129,
+    critical: 92,
+    casesPerOneMillion: 3531,
+    deathsPerOneMillion: 20,
+    tests: 403236,
+    testsPerOneMillion: 42672,
+    population: 9449661,
+    continent: Europe,
+    activePerOneMillion: 2235.95,
+    recoveredPerOneMillion: 1275.92,
+    criticalPerOneMillion: 9.74
+
+
+    Last updated: 1590076993472,
+    Country: Belgium,
+    Country Info:
+      id: 56,
+      iso2: BE,
+      iso3: BEL,
+      Latitude: 50.8333,
+      Longitude: 4,
+      <a>flag: https://disease.sh/assets/img/flags/be.png</a>
+
+    Cases: 56235,
+    New Cases: 252,
+    Deaths: 9186,
+    New Deaths: 36,
+    recovered: 14988,
+    active: 32061,
+    critical: 277,
+    casesPerOneMillion: 4855,
+    deathsPerOneMillion: 793,
+    tests: 739146,
+    testsPerOneMillion: 63807,
+    population: 11584014,
+    continent: Europe,
+    activePerOneMillion: 2767.69,
+    recoveredPerOneMillion: 1293.85,
+    criticalPerOneMillion: 23.91
+
+
+    Last updated: 1590076993722,
+    Country: Belize,
+    Country Info:
+      id: 84,
+      iso2: BZ,
+      iso3: BLZ,
+      Latitude: 17.25,
+      Longitude: -88.75,
+      <a>flag: https://disease.sh/assets/img/flags/bz.png</a>
+
+    Cases: 18,
+    New Cases: 0,
+    Deaths: 2,
+    New Deaths: 0,
+    recovered: 16,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 45,
+    deathsPerOneMillion: 5,
+    tests: 1363,
+    testsPerOneMillion: 3435,
+    population: 396771,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 40.33,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993680,
+    Country: Benin,
+    Country Info:
+      id: 204,
+      iso2: BJ,
+      iso3: BEN,
+      Latitude: 9.5,
+      Longitude: 2.25,
+      <a>flag: https://disease.sh/assets/img/flags/bj.png</a>
+
+    Cases: 135,
+    New Cases: 5,
+    Deaths: 3,
+    New Deaths: 1,
+    recovered: 57,
+    active: 75,
+    critical: 0,
+    casesPerOneMillion: 11,
+    deathsPerOneMillion: 0.2,
+    tests: 26431,
+    testsPerOneMillion: 2187,
+    population: 12084074,
+    continent: Africa,
+    activePerOneMillion: 6.21,
+    recoveredPerOneMillion: 4.72,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993683,
+    Country: Bermuda,
+    Country Info:
+      id: 60,
+      iso2: BM,
+      iso3: BMU,
+      Latitude: 32.3333,
+      Longitude: -64.75,
+      <a>flag: https://disease.sh/assets/img/flags/bm.png</a>
+
+    Cases: 125,
+    New Cases: 0,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 80,
+    active: 36,
+    critical: 2,
+    casesPerOneMillion: 2006,
+    deathsPerOneMillion: 144,
+    tests: 5719,
+    testsPerOneMillion: 91793,
+    population: 62303,
+    continent: North America,
+    activePerOneMillion: 577.82,
+    recoveredPerOneMillion: 1284.05,
+    criticalPerOneMillion: 32.1
+
+
+    Last updated: 1590076993721,
+    Country: Bhutan,
+    Country Info:
+      id: 64,
+      iso2: BT,
+      iso3: BTN,
+      Latitude: 27.5,
+      Longitude: 90.5,
+      <a>flag: https://disease.sh/assets/img/flags/bt.png</a>
+
+    Cases: 21,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 6,
+    active: 15,
+    critical: 0,
+    casesPerOneMillion: 27,
+    deathsPerOneMillion: 0,
+    tests: 14527,
+    testsPerOneMillion: 18851,
+    population: 770633,
+    continent: Asia,
+    activePerOneMillion: 19.46,
+    recoveredPerOneMillion: 7.79,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993540,
+    Country: Bolivia,
+    Country Info:
+      id: 68,
+      iso2: BO,
+      iso3: BOL,
+      Latitude: -17,
+      Longitude: -65,
+      <a>flag: https://disease.sh/assets/img/flags/bo.png</a>
+
+    Cases: 4919,
+    New Cases: 438,
+    Deaths: 199,
+    New Deaths: 10,
+    recovered: 553,
+    active: 4167,
+    critical: 3,
+    casesPerOneMillion: 422,
+    deathsPerOneMillion: 17,
+    tests: 14803,
+    testsPerOneMillion: 1270,
+    population: 11654518,
+    continent: South America,
+    activePerOneMillion: 357.54,
+    recoveredPerOneMillion: 47.45,
+    criticalPerOneMillion: 0.26
+
+
+    Last updated: 1590076993556,
+    Country: Bosnia,
+    Country Info:
+      id: 70,
+      iso2: BA,
+      iso3: BIH,
+      Latitude: 44,
+      Longitude: 18,
+      <a>flag: https://disease.sh/assets/img/flags/ba.png</a>
+
+    Cases: 2350,
+    New Cases: 12,
+    Deaths: 140,
+    New Deaths: 4,
+    recovered: 1596,
+    active: 614,
+    critical: 4,
+    casesPerOneMillion: 716,
+    deathsPerOneMillion: 43,
+    tests: 56997,
+    testsPerOneMillion: 17361,
+    population: 3282976,
+    continent: Europe,
+    activePerOneMillion: 187.03,
+    recoveredPerOneMillion: 486.14,
+    criticalPerOneMillion: 1.22
+
+
+    Last updated: 1590076993716,
+    Country: Botswana,
+    Country Info:
+      id: 72,
+      iso2: BW,
+      iso3: BWA,
+      Latitude: -22,
+      Longitude: 24,
+      <a>flag: https://disease.sh/assets/img/flags/bw.png</a>
+
+    Cases: 29,
+    New Cases: 4,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 17,
+    active: 11,
+    critical: 0,
+    casesPerOneMillion: 12,
+    deathsPerOneMillion: 0.4,
+    tests: 14855,
+    testsPerOneMillion: 6332,
+    population: 2345938,
+    continent: Africa,
+    activePerOneMillion: 4.69,
+    recoveredPerOneMillion: 7.25,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993450,
+    Country: Brazil,
+    Country Info:
+      id: 76,
+      iso2: BR,
+      iso3: BRA,
+      Latitude: -10,
+      Longitude: -55,
+      <a>flag: https://disease.sh/assets/img/flags/br.png</a>
+
+    Cases: 294152,
+    New Cases: 795,
+    Deaths: 19038,
+    New Deaths: 144,
+    recovered: 116683,
+    active: 158431,
+    critical: 8318,
+    casesPerOneMillion: 1385,
+    deathsPerOneMillion: 90,
+    tests: 735224,
+    testsPerOneMillion: 3462,
+    population: 212389176,
+    continent: South America,
+    activePerOneMillion: 745.95,
+    recoveredPerOneMillion: 549.38,
+    criticalPerOneMillion: 39.16
+
+
+    Last updated: 1590076993738,
+    Country: British Virgin Islands,
+    Country Info:
+      id: 92,
+      iso2: VG,
+      iso3: VGB,
+      Latitude: 18.5,
+      Longitude: -64.5,
+      <a>flag: https://disease.sh/assets/img/flags/vg.png</a>
+
+    Cases: 8,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 6,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 265,
+    deathsPerOneMillion: 33,
+    tests: 167,
+    testsPerOneMillion: 5528,
+    population: 30208,
+    continent: North America,
+    activePerOneMillion: 33.1,
+    recoveredPerOneMillion: 198.62,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993676,
+    Country: Brunei,
+    Country Info:
+      id: 96,
+      iso2: BN,
+      iso3: BRN,
+      Latitude: 4.5,
+      Longitude: 114.6667,
+      <a>flag: https://disease.sh/assets/img/flags/bn.png</a>
+
+    Cases: 141,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 136,
+    active: 4,
+    critical: 2,
+    casesPerOneMillion: 323,
+    deathsPerOneMillion: 2,
+    tests: 18010,
+    testsPerOneMillion: 41213,
+    population: 437001,
+    continent: Asia,
+    activePerOneMillion: 9.15,
+    recoveredPerOneMillion: 311.21,
+    criticalPerOneMillion: 4.58
+
+
+    Last updated: 1590076993558,
+    Country: Bulgaria,
+    Country Info:
+      id: 100,
+      iso2: BG,
+      iso3: BGR,
+      Latitude: 43,
+      Longitude: 25,
+      <a>flag: https://disease.sh/assets/img/flags/bg.png</a>
+
+    Cases: 2331,
+    New Cases: 39,
+    Deaths: 120,
+    New Deaths: 4,
+    recovered: 727,
+    active: 1484,
+    critical: 31,
+    casesPerOneMillion: 335,
+    deathsPerOneMillion: 17,
+    tests: 70755,
+    testsPerOneMillion: 10175,
+    population: 6953938,
+    continent: Europe,
+    activePerOneMillion: 213.4,
+    recoveredPerOneMillion: 104.55,
+    criticalPerOneMillion: 4.46
+
+
+    Last updated: 1590076993607,
+    Country: Burkina Faso,
+    Country Info:
+      id: 854,
+      iso2: BF,
+      iso3: BFA,
+      Latitude: 13,
+      Longitude: -2,
+      <a>flag: https://disease.sh/assets/img/flags/bf.png</a>
+
+    Cases: 812,
+    New Cases: 3,
+    Deaths: 52,
+    New Deaths: 0,
+    recovered: 669,
+    active: 91,
+    critical: 0,
+    casesPerOneMillion: 39,
+    deathsPerOneMillion: 2,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 20832244,
+    continent: Africa,
+    activePerOneMillion: 4.37,
+    recoveredPerOneMillion: 32.11,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993713,
+    Country: Burundi,
+    Country Info:
+      id: 108,
+      iso2: BI,
+      iso3: BDI,
+      Latitude: -3.5,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/bi.png</a>
+
+    Cases: 42,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 20,
+    active: 21,
+    critical: 0,
+    casesPerOneMillion: 4,
+    deathsPerOneMillion: 0.08,
+    tests: 284,
+    testsPerOneMillion: 24,
+    population: 11846415,
+    continent: Africa,
+    activePerOneMillion: 1.77,
+    recoveredPerOneMillion: 1.69,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993639,
+    Country: Cabo Verde,
+    Country Info:
+      id: 132,
+      iso2: CV,
+      iso3: CPV,
+      Latitude: 16,
+      Longitude: -24,
+      <a>flag: https://disease.sh/assets/img/flags/cv.png</a>
+
+    Cases: 349,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 85,
+    active: 261,
+    critical: 0,
+    casesPerOneMillion: 628,
+    deathsPerOneMillion: 5,
+    tests: 892,
+    testsPerOneMillion: 1606,
+    population: 555294,
+    continent: Africa,
+    activePerOneMillion: 470.02,
+    recoveredPerOneMillion: 153.07,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993685,
+    Country: Cambodia,
+    Country Info:
+      id: 116,
+      iso2: KH,
+      iso3: KHM,
+      Latitude: 13,
+      Longitude: 105,
+      <a>flag: https://disease.sh/assets/img/flags/kh.png</a>
+
+    Cases: 123,
+    New Cases: 1,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 122,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 7,
+    deathsPerOneMillion: 0,
+    tests: 15572,
+    testsPerOneMillion: 933,
+    population: 16692053,
+    continent: Asia,
+    activePerOneMillion: 0.06,
+    recoveredPerOneMillion: 7.31,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993545,
+    Country: Cameroon,
+    Country Info:
+      id: 120,
+      iso2: CM,
+      iso3: CMR,
+      Latitude: 6,
+      Longitude: 12,
+      <a>flag: https://disease.sh/assets/img/flags/cm.png</a>
+
+    Cases: 3733,
+    New Cases: 0,
+    Deaths: 146,
+    New Deaths: 0,
+    recovered: 1595,
+    active: 1992,
+    critical: 28,
+    casesPerOneMillion: 141,
+    deathsPerOneMillion: 6,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 26464935,
+    continent: Africa,
+    activePerOneMillion: 75.27,
+    recoveredPerOneMillion: 60.27,
+    criticalPerOneMillion: 1.06
+
+
+    Last updated: 1590076993467,
+    Country: Canada,
+    Country Info:
+      id: 124,
+      iso2: CA,
+      iso3: CAN,
+      Latitude: 60,
+      Longitude: -95,
+      <a>flag: https://disease.sh/assets/img/flags/ca.png</a>
+
+    Cases: 80555,
+    New Cases: 413,
+    Deaths: 6062,
+    New Deaths: 31,
+    recovered: 40776,
+    active: 33717,
+    critical: 502,
+    casesPerOneMillion: 2136,
+    deathsPerOneMillion: 161,
+    tests: 1375126,
+    testsPerOneMillion: 36471,
+    population: 37704575,
+    continent: North America,
+    activePerOneMillion: 894.24,
+    recoveredPerOneMillion: 1081.46,
+    criticalPerOneMillion: 13.31
+
+
+    Last updated: 1590076993740,
+    Country: Caribbean Netherlands,
+    Country Info:
+      id: 535,
+      iso2: BQ,
+      iso3: BES,
+      Latitude: 12.2,
+      Longitude: -68.26,
+      <a>flag: https://disease.sh/assets/img/flags/bq.png</a>
+
+    Cases: 6,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 6,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 229,
+    deathsPerOneMillion: 0,
+    tests: 357,
+    testsPerOneMillion: 13629,
+    population: 26195,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 229.05,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993688,
+    Country: Cayman Islands,
+    Country Info:
+      id: 136,
+      iso2: KY,
+      iso3: CYM,
+      Latitude: 19.5,
+      Longitude: -80.5,
+      <a>flag: https://disease.sh/assets/img/flags/ky.png</a>
+
+    Cases: 111,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 55,
+    active: 55,
+    critical: 0,
+    casesPerOneMillion: 1691,
+    deathsPerOneMillion: 15,
+    tests: 7576,
+    testsPerOneMillion: 115430,
+    population: 65633,
+    continent: North America,
+    activePerOneMillion: 837.99,
+    recoveredPerOneMillion: 837.99,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993634,
+    Country: Central African Republic,
+    Country Info:
+      id: 140,
+      iso2: CF,
+      iso3: CAF,
+      Latitude: 7,
+      Longitude: 21,
+      <a>flag: https://disease.sh/assets/img/flags/cf.png</a>
+
+    Cases: 418,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 18,
+    active: 400,
+    critical: 0,
+    casesPerOneMillion: 87,
+    deathsPerOneMillion: 0,
+    tests: 10837,
+    testsPerOneMillion: 2248,
+    population: 4819836,
+    continent: Africa,
+    activePerOneMillion: 82.99,
+    recoveredPerOneMillion: 3.73,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993619,
+    Country: Chad,
+    Country Info:
+      id: 148,
+      iso2: TD,
+      iso3: TCD,
+      Latitude: 15,
+      Longitude: 19,
+      <a>flag: https://disease.sh/assets/img/flags/td.png</a>
+
+    Cases: 565,
+    New Cases: 0,
+    Deaths: 57,
+    New Deaths: 0,
+    recovered: 177,
+    active: 331,
+    critical: 0,
+    casesPerOneMillion: 35,
+    deathsPerOneMillion: 3,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 16367109,
+    continent: Africa,
+    activePerOneMillion: 20.22,
+    recoveredPerOneMillion: 10.81,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993620,
+    Country: Channel Islands,
+    Country Info:
+      id: 832,
+      iso2: JE,
+      iso3: JEY,
+      Latitude: 49.21,
+      Longitude: -2.13,
+      <a>flag: https://disease.sh/assets/img/flags/je.png</a>
+
+    Cases: 558,
+    New Cases: 0,
+    Deaths: 45,
+    New Deaths: 0,
+    recovered: 492,
+    active: 21,
+    critical: 0,
+    casesPerOneMillion: 3213,
+    deathsPerOneMillion: 259,
+    tests: 5342,
+    testsPerOneMillion: 30758,
+    population: 173681,
+    continent: Europe,
+    activePerOneMillion: 120.91,
+    recoveredPerOneMillion: 2832.78,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993475,
+    Country: Chile,
+    Country Info:
+      id: 152,
+      iso2: CL,
+      iso3: CHL,
+      Latitude: -30,
+      Longitude: -71,
+      <a>flag: https://disease.sh/assets/img/flags/cl.png</a>
+
+    Cases: 53617,
+    New Cases: 0,
+    Deaths: 544,
+    New Deaths: 0,
+    recovered: 22504,
+    active: 30569,
+    critical: 904,
+    casesPerOneMillion: 2808,
+    deathsPerOneMillion: 28,
+    tests: 409669,
+    testsPerOneMillion: 21451,
+    population: 19097583,
+    continent: South America,
+    activePerOneMillion: 1600.67,
+    recoveredPerOneMillion: 1178.37,
+    criticalPerOneMillion: 47.34
+
+
+    Last updated: 1590076993745,
+    Country: China,
+    Country Info:
+      id: 156,
+      iso2: CN,
+      iso3: CHN,
+      Latitude: 35,
+      Longitude: 105,
+      <a>flag: https://disease.sh/assets/img/flags/cn.png</a>
+
+    Cases: 82967,
+    New Cases: 2,
+    Deaths: 4634,
+    New Deaths: 0,
+    recovered: 78249,
+    active: 84,
+    critical: 8,
+    casesPerOneMillion: 58,
+    deathsPerOneMillion: 3,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 1439323776,
+    continent: Asia,
+    activePerOneMillion: 0.06,
+    recoveredPerOneMillion: 54.37,
+    criticalPerOneMillion: 0.01
+
+
+    Last updated: 1590076993502,
+    Country: Colombia,
+    Country Info:
+      id: 170,
+      iso2: CO,
+      iso3: COL,
+      Latitude: 4,
+      Longitude: -72,
+      <a>flag: https://disease.sh/assets/img/flags/co.png</a>
+
+    Cases: 17687,
+    New Cases: 0,
+    Deaths: 630,
+    New Deaths: 0,
+    recovered: 4256,
+    active: 12801,
+    critical: 136,
+    casesPerOneMillion: 348,
+    deathsPerOneMillion: 12,
+    tests: 214536,
+    testsPerOneMillion: 4221,
+    population: 50820749,
+    continent: South America,
+    activePerOneMillion: 251.89,
+    recoveredPerOneMillion: 83.75,
+    criticalPerOneMillion: 2.68
+
+
+    Last updated: 1590076993715,
+    Country: Comoros,
+    Country Info:
+      id: 174,
+      iso2: KM,
+      iso3: COM,
+      Latitude: -12.1667,
+      Longitude: 44.25,
+      <a>flag: https://disease.sh/assets/img/flags/km.png</a>
+
+    Cases: 34,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 8,
+    active: 25,
+    critical: 0,
+    casesPerOneMillion: 39,
+    deathsPerOneMillion: 1,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 867370,
+    continent: Africa,
+    activePerOneMillion: 28.82,
+    recoveredPerOneMillion: 9.22,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993633,
+    Country: Congo,
+    Country Info:
+      id: 178,
+      iso2: CG,
+      iso3: COG,
+      Latitude: -1,
+      Longitude: 15,
+      <a>flag: https://disease.sh/assets/img/flags/cg.png</a>
+
+    Cases: 420,
+    New Cases: 0,
+    Deaths: 15,
+    New Deaths: 0,
+    recovered: 132,
+    active: 273,
+    critical: 0,
+    casesPerOneMillion: 76,
+    deathsPerOneMillion: 3,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 5501474,
+    continent: Africa,
+    activePerOneMillion: 49.62,
+    recoveredPerOneMillion: 23.99,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993600,
+    Country: Costa Rica,
+    Country Info:
+      id: 188,
+      iso2: CR,
+      iso3: CRI,
+      Latitude: 10,
+      Longitude: -84,
+      <a>flag: https://disease.sh/assets/img/flags/cr.png</a>
+
+    Cases: 897,
+    New Cases: 0,
+    Deaths: 10,
+    New Deaths: 0,
+    recovered: 582,
+    active: 305,
+    critical: 5,
+    casesPerOneMillion: 176,
+    deathsPerOneMillion: 2,
+    tests: 21299,
+    testsPerOneMillion: 4185,
+    population: 5088826,
+    continent: North America,
+    activePerOneMillion: 59.94,
+    recoveredPerOneMillion: 114.37,
+    criticalPerOneMillion: 0.98
+
+
+    Last updated: 1590076993561,
+    Country: Croatia,
+    Country Info:
+      id: 191,
+      iso2: HR,
+      iso3: HRV,
+      Latitude: 45.1667,
+      Longitude: 15.5,
+      <a>flag: https://disease.sh/assets/img/flags/hr.png</a>
+
+    Cases: 2237,
+    New Cases: 3,
+    Deaths: 97,
+    New Deaths: 1,
+    recovered: 1978,
+    active: 162,
+    critical: 9,
+    casesPerOneMillion: 545,
+    deathsPerOneMillion: 24,
+    tests: 58091,
+    testsPerOneMillion: 14141,
+    population: 4107943,
+    continent: Europe,
+    activePerOneMillion: 39.44,
+    recoveredPerOneMillion: 481.51,
+    criticalPerOneMillion: 2.19
+
+
+    Last updated: 1590076993563,
+    Country: Cuba,
+    Country Info:
+      id: 192,
+      iso2: CU,
+      iso3: CUB,
+      Latitude: 21.5,
+      Longitude: -80,
+      <a>flag: https://disease.sh/assets/img/flags/cu.png</a>
+
+    Cases: 1900,
+    New Cases: 0,
+    Deaths: 79,
+    New Deaths: 0,
+    recovered: 1573,
+    active: 248,
+    critical: 8,
+    casesPerOneMillion: 168,
+    deathsPerOneMillion: 7,
+    tests: 87288,
+    testsPerOneMillion: 7706,
+    population: 11327367,
+    continent: North America,
+    activePerOneMillion: 21.89,
+    recoveredPerOneMillion: 138.87,
+    criticalPerOneMillion: 0.71
+
+
+    Last updated: 1590076993728,
+    Country: Curaçao,
+    Country Info:
+      id: 531,
+      iso2: CW,
+      iso3: CUW,
+      Latitude: 12.15,
+      Longitude: -68.97,
+      <a>flag: https://disease.sh/assets/img/flags/cw.png</a>
+
+    Cases: 16,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 14,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 98,
+    deathsPerOneMillion: 6,
+    tests: 485,
+    testsPerOneMillion: 2957,
+    population: 164018,
+    continent: North America,
+    activePerOneMillion: 6.1,
+    recoveredPerOneMillion: 85.36,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993598,
+    Country: Cyprus,
+    Country Info:
+      id: 196,
+      iso2: CY,
+      iso3: CYP,
+      Latitude: 35,
+      Longitude: 33,
+      <a>flag: https://disease.sh/assets/img/flags/cy.png</a>
+
+    Cases: 923,
+    New Cases: 1,
+    Deaths: 17,
+    New Deaths: 0,
+    recovered: 516,
+    active: 390,
+    critical: 10,
+    casesPerOneMillion: 765,
+    deathsPerOneMillion: 14,
+    tests: 90718,
+    testsPerOneMillion: 75199,
+    population: 1206368,
+    continent: Asia,
+    activePerOneMillion: 323.28,
+    recoveredPerOneMillion: 427.73,
+    criticalPerOneMillion: 8.29
+
+
+    Last updated: 1590076993517,
+    Country: Czechia,
+    Country Info:
+      id: 203,
+      iso2: CZ,
+      iso3: CZE,
+      Latitude: 49.75,
+      Longitude: 15.5,
+      <a>flag: https://disease.sh/assets/img/flags/cz.png</a>
+
+    Cases: 8743,
+    New Cases: 22,
+    Deaths: 306,
+    New Deaths: 2,
+    recovered: 5922,
+    active: 2515,
+    critical: 36,
+    casesPerOneMillion: 817,
+    deathsPerOneMillion: 29,
+    tests: 379750,
+    testsPerOneMillion: 35468,
+    population: 10706798,
+    continent: Europe,
+    activePerOneMillion: 234.9,
+    recoveredPerOneMillion: 553.11,
+    criticalPerOneMillion: 3.36
+
+
+    Last updated: 1590076993562,
+    Country: Côte d'Ivoire,
+    Country Info:
+      id: 384,
+      iso2: CI,
+      iso3: CIV,
+      Latitude: 8,
+      Longitude: -5,
+      <a>flag: https://disease.sh/assets/img/flags/ci.png</a>
+
+    Cases: 2231,
+    New Cases: 0,
+    Deaths: 29,
+    New Deaths: 0,
+    recovered: 1083,
+    active: 1119,
+    critical: 0,
+    casesPerOneMillion: 85,
+    deathsPerOneMillion: 1,
+    tests: 19174,
+    testsPerOneMillion: 729,
+    population: 26298323,
+    continent: Africa,
+    activePerOneMillion: 42.55,
+    recoveredPerOneMillion: 41.18,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993566,
+    Country: DRC,
+    Country Info:
+      id: 180,
+      iso2: CD,
+      iso3: COD,
+      Latitude: 0,
+      Longitude: 25,
+      <a>flag: https://disease.sh/assets/img/flags/cd.png</a>
+
+    Cases: 1835,
+    New Cases: 104,
+    Deaths: 61,
+    New Deaths: 0,
+    recovered: 303,
+    active: 1471,
+    critical: 0,
+    casesPerOneMillion: 21,
+    deathsPerOneMillion: 0.7,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 89219290,
+    continent: Africa,
+    activePerOneMillion: 16.49,
+    recoveredPerOneMillion: 3.4,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993511,
+    Country: Denmark,
+    Country Info:
+      id: 208,
+      iso2: DK,
+      iso3: DNK,
+      Latitude: 56,
+      Longitude: 10,
+      <a>flag: https://disease.sh/assets/img/flags/dk.png</a>
+
+    Cases: 11182,
+    New Cases: 65,
+    Deaths: 561,
+    New Deaths: 7,
+    recovered: 9643,
+    active: 978,
+    critical: 23,
+    casesPerOneMillion: 1931,
+    deathsPerOneMillion: 97,
+    tests: 504266,
+    testsPerOneMillion: 87093,
+    population: 5789943,
+    continent: Europe,
+    activePerOneMillion: 168.91,
+    recoveredPerOneMillion: 1665.47,
+    criticalPerOneMillion: 3.97
+
+
+    Last updated: 1590076993612,
+    Country: Diamond Princess,
+    Country Info:
+      id: null,
+      iso2: null,
+      iso3: null,
+      Latitude: 0,
+      Longitude: 0,
+      <a>flag: https://disease.sh/assets/img/flags/unknown.png</a>
+
+    Cases: 712,
+    New Cases: 0,
+    Deaths: 13,
+    New Deaths: 0,
+    recovered: 651,
+    active: 48,
+    critical: 4,
+    casesPerOneMillion: 0,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 0,
+    continent: ,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 0,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993567,
+    Country: Djibouti,
+    Country Info:
+      id: 262,
+      iso2: DJ,
+      iso3: DJI,
+      Latitude: 11.5,
+      Longitude: 43,
+      <a>flag: https://disease.sh/assets/img/flags/dj.png</a>
+
+    Cases: 1828,
+    New Cases: 0,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 1052,
+    active: 767,
+    critical: 0,
+    casesPerOneMillion: 1853,
+    deathsPerOneMillion: 9,
+    tests: 20056,
+    testsPerOneMillion: 20334,
+    population: 986323,
+    continent: Africa,
+    activePerOneMillion: 777.64,
+    recoveredPerOneMillion: 1066.59,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993729,
+    Country: Dominica,
+    Country Info:
+      id: 212,
+      iso2: DM,
+      iso3: DMA,
+      Latitude: 15.4167,
+      Longitude: -61.3333,
+      <a>flag: https://disease.sh/assets/img/flags/dm.png</a>
+
+    Cases: 16,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 16,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 222,
+    deathsPerOneMillion: 0,
+    tests: 433,
+    testsPerOneMillion: 6017,
+    population: 71966,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 222.33,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993509,
+    Country: Dominican Republic,
+    Country Info:
+      id: 214,
+      iso2: DO,
+      iso3: DOM,
+      Latitude: 19,
+      Longitude: -70.6667,
+      <a>flag: https://disease.sh/assets/img/flags/do.png</a>
+
+    Cases: 13657,
+    New Cases: 180,
+    Deaths: 448,
+    New Deaths: 2,
+    recovered: 7366,
+    active: 5843,
+    critical: 113,
+    casesPerOneMillion: 1260,
+    deathsPerOneMillion: 41,
+    tests: 61330,
+    testsPerOneMillion: 5660,
+    population: 10835483,
+    continent: North America,
+    activePerOneMillion: 539.25,
+    recoveredPerOneMillion: 679.8,
+    criticalPerOneMillion: 10.43
+
+
+    Last updated: 1590076993481,
+    Country: Ecuador,
+    Country Info:
+      id: 218,
+      iso2: EC,
+      iso3: ECU,
+      Latitude: -2,
+      Longitude: -77.5,
+      <a>flag: https://disease.sh/assets/img/flags/ec.png</a>
+
+    Cases: 34854,
+    New Cases: 0,
+    Deaths: 2888,
+    New Deaths: 0,
+    recovered: 3557,
+    active: 28409,
+    critical: 191,
+    casesPerOneMillion: 1979,
+    deathsPerOneMillion: 164,
+    tests: 100248,
+    testsPerOneMillion: 5692,
+    population: 17611696,
+    continent: South America,
+    activePerOneMillion: 1613.08,
+    recoveredPerOneMillion: 201.97,
+    criticalPerOneMillion: 10.85
+
+
+    Last updated: 1590076993508,
+    Country: Egypt,
+    Country Info:
+      id: 818,
+      iso2: EG,
+      iso3: EGY,
+      Latitude: 27,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/eg.png</a>
+
+    Cases: 14229,
+    New Cases: 0,
+    Deaths: 680,
+    New Deaths: 0,
+    recovered: 3994,
+    active: 9555,
+    critical: 41,
+    casesPerOneMillion: 139,
+    deathsPerOneMillion: 7,
+    tests: 135000,
+    testsPerOneMillion: 1322,
+    population: 102104567,
+    continent: Africa,
+    activePerOneMillion: 93.58,
+    recoveredPerOneMillion: 39.12,
+    criticalPerOneMillion: 0.4
+
+
+    Last updated: 1590076993573,
+    Country: El Salvador,
+    Country Info:
+      id: 222,
+      iso2: SV,
+      iso3: SLV,
+      Latitude: 13.8333,
+      Longitude: -88.9167,
+      <a>flag: https://disease.sh/assets/img/flags/sv.png</a>
+
+    Cases: 1640,
+    New Cases: 69,
+    Deaths: 32,
+    New Deaths: 1,
+    recovered: 540,
+    active: 1068,
+    critical: 26,
+    casesPerOneMillion: 253,
+    deathsPerOneMillion: 5,
+    tests: 65226,
+    testsPerOneMillion: 10062,
+    population: 6482554,
+    continent: North America,
+    activePerOneMillion: 164.75,
+    recoveredPerOneMillion: 83.3,
+    criticalPerOneMillion: 4.01
+
+
+    Last updated: 1590076993602,
+    Country: Equatorial Guinea,
+    Country Info:
+      id: 226,
+      iso2: GQ,
+      iso3: GNQ,
+      Latitude: 2,
+      Longitude: 10,
+      <a>flag: https://disease.sh/assets/img/flags/gq.png</a>
+
+    Cases: 890,
+    New Cases: 0,
+    Deaths: 7,
+    New Deaths: 0,
+    recovered: 22,
+    active: 861,
+    critical: 0,
+    casesPerOneMillion: 637,
+    deathsPerOneMillion: 5,
+    tests: 854,
+    testsPerOneMillion: 611,
+    population: 1397127,
+    continent: Africa,
+    activePerOneMillion: 616.26,
+    recoveredPerOneMillion: 15.75,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993715,
+    Country: Eritrea,
+    Country Info:
+      id: 232,
+      iso2: ER,
+      iso3: ERI,
+      Latitude: 15,
+      Longitude: 39,
+      <a>flag: https://disease.sh/assets/img/flags/er.png</a>
+
+    Cases: 39,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 39,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 11,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 3540712,
+    continent: Africa,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 11.01,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993570,
+    Country: Estonia,
+    Country Info:
+      id: 233,
+      iso2: EE,
+      iso3: EST,
+      Latitude: 59,
+      Longitude: 26,
+      <a>flag: https://disease.sh/assets/img/flags/ee.png</a>
+
+    Cases: 1800,
+    New Cases: 6,
+    Deaths: 64,
+    New Deaths: 0,
+    recovered: 963,
+    active: 773,
+    critical: 2,
+    casesPerOneMillion: 1357,
+    deathsPerOneMillion: 48,
+    tests: 73731,
+    testsPerOneMillion: 55586,
+    population: 1326438,
+    continent: Europe,
+    activePerOneMillion: 582.76,
+    recoveredPerOneMillion: 726,
+    criticalPerOneMillion: 1.51
+
+
+    Last updated: 1590076993636,
+    Country: Ethiopia,
+    Country Info:
+      id: 231,
+      iso2: ET,
+      iso3: ETH,
+      Latitude: 8,
+      Longitude: 38,
+      <a>flag: https://disease.sh/assets/img/flags/et.png</a>
+
+    Cases: 398,
+    New Cases: 9,
+    Deaths: 5,
+    New Deaths: 0,
+    recovered: 123,
+    active: 270,
+    critical: 0,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0.04,
+    tests: 69507,
+    testsPerOneMillion: 606,
+    population: 114615025,
+    continent: Africa,
+    activePerOneMillion: 2.36,
+    recoveredPerOneMillion: 1.07,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993731,
+    Country: Falkland Islands (Malvinas),
+    Country Info:
+      id: 238,
+      iso2: FK,
+      iso3: FLK,
+      Latitude: -51.75,
+      Longitude: -59,
+      <a>flag: https://disease.sh/assets/img/flags/fk.png</a>
+
+    Cases: 13,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 13,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 3750,
+    deathsPerOneMillion: 0,
+    tests: 426,
+    testsPerOneMillion: 122873,
+    population: 3467,
+    continent: South America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 3749.64,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993662,
+    Country: Faroe Islands,
+    Country Info:
+      id: 234,
+      iso2: FO,
+      iso3: FRO,
+      Latitude: 62,
+      Longitude: -7,
+      <a>flag: https://disease.sh/assets/img/flags/fo.png</a>
+
+    Cases: 187,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 187,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 3829,
+    deathsPerOneMillion: 0,
+    tests: 8986,
+    testsPerOneMillion: 183981,
+    population: 48842,
+    continent: Europe,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 3828.67,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993723,
+    Country: Fiji,
+    Country Info:
+      id: 242,
+      iso2: FJ,
+      iso3: FJI,
+      Latitude: -18,
+      Longitude: 175,
+      <a>flag: https://disease.sh/assets/img/flags/fj.png</a>
+
+    Cases: 18,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 15,
+    active: 3,
+    critical: 0,
+    casesPerOneMillion: 20,
+    deathsPerOneMillion: 0,
+    tests: 1300,
+    testsPerOneMillion: 1451,
+    population: 895713,
+    continent: Australia/Oceania,
+    activePerOneMillion: 3.35,
+    recoveredPerOneMillion: 16.75,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993536,
+    Country: Finland,
+    Country Info:
+      id: 246,
+      iso2: FI,
+      iso3: FIN,
+      Latitude: 64,
+      Longitude: 26,
+      <a>flag: https://disease.sh/assets/img/flags/fi.png</a>
+
+    Cases: 6493,
+    New Cases: 50,
+    Deaths: 306,
+    New Deaths: 2,
+    recovered: 4800,
+    active: 1387,
+    critical: 22,
+    casesPerOneMillion: 1172,
+    deathsPerOneMillion: 55,
+    tests: 160177,
+    testsPerOneMillion: 28914,
+    population: 5539776,
+    continent: Europe,
+    activePerOneMillion: 250.37,
+    recoveredPerOneMillion: 866.46,
+    criticalPerOneMillion: 3.97
+
+
+    Last updated: 1590076993457,
+    Country: France,
+    Country Info:
+      id: 250,
+      iso2: FR,
+      iso3: FRA,
+      Latitude: 46,
+      Longitude: 2,
+      <a>flag: https://disease.sh/assets/img/flags/fr.png</a>
+
+    Cases: 181575,
+    New Cases: 0,
+    Deaths: 28132,
+    New Deaths: 0,
+    recovered: 63354,
+    active: 90089,
+    critical: 1794,
+    casesPerOneMillion: 2782,
+    deathsPerOneMillion: 431,
+    tests: 1384633,
+    testsPerOneMillion: 21218,
+    population: 65257613,
+    continent: Europe,
+    activePerOneMillion: 1380.51,
+    recoveredPerOneMillion: 970.83,
+    criticalPerOneMillion: 27.49
+
+
+    Last updated: 1590076993652,
+    Country: French Guiana,
+    Country Info:
+      id: 254,
+      iso2: GF,
+      iso3: GUF,
+      Latitude: 4,
+      Longitude: -53,
+      <a>flag: https://disease.sh/assets/img/flags/gf.png</a>
+
+    Cases: 237,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 136,
+    active: 100,
+    critical: 0,
+    casesPerOneMillion: 796,
+    deathsPerOneMillion: 3,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 297729,
+    continent: South America,
+    activePerOneMillion: 335.88,
+    recoveredPerOneMillion: 456.79,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993707,
+    Country: French Polynesia,
+    Country Info:
+      id: 258,
+      iso2: PF,
+      iso3: PYF,
+      Latitude: -15,
+      Longitude: -140,
+      <a>flag: https://disease.sh/assets/img/flags/pf.png</a>
+
+    Cases: 60,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 60,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 214,
+    deathsPerOneMillion: 0,
+    tests: 3686,
+    testsPerOneMillion: 13130,
+    population: 280726,
+    continent: Australia/Oceania,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 213.73,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993578,
+    Country: Gabon,
+    Country Info:
+      id: 266,
+      iso2: GA,
+      iso3: GAB,
+      Latitude: -1,
+      Longitude: 11.75,
+      <a>flag: https://disease.sh/assets/img/flags/ga.png</a>
+
+    Cases: 1567,
+    New Cases: 0,
+    Deaths: 12,
+    New Deaths: 0,
+    recovered: 365,
+    active: 1190,
+    critical: 9,
+    casesPerOneMillion: 706,
+    deathsPerOneMillion: 5,
+    tests: 7966,
+    testsPerOneMillion: 3589,
+    population: 2219341,
+    continent: Africa,
+    activePerOneMillion: 536.2,
+    recoveredPerOneMillion: 164.46,
+    criticalPerOneMillion: 4.06
+
+
+    Last updated: 1590076993718,
+    Country: Gambia,
+    Country Info:
+      id: 270,
+      iso2: GM,
+      iso3: GMB,
+      Latitude: 13.4667,
+      Longitude: -16.5667,
+      <a>flag: https://disease.sh/assets/img/flags/gm.png</a>
+
+    Cases: 24,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 13,
+    active: 10,
+    critical: 0,
+    casesPerOneMillion: 10,
+    deathsPerOneMillion: 0.4,
+    tests: 1476,
+    testsPerOneMillion: 613,
+    population: 2408228,
+    continent: Africa,
+    activePerOneMillion: 4.15,
+    recoveredPerOneMillion: 5.4,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993611,
+    Country: Georgia,
+    Country Info:
+      id: 268,
+      iso2: GE,
+      iso3: GEO,
+      Latitude: 42,
+      Longitude: 43.5,
+      <a>flag: https://disease.sh/assets/img/flags/ge.png</a>
+
+    Cases: 721,
+    New Cases: 8,
+    Deaths: 12,
+    New Deaths: 0,
+    recovered: 485,
+    active: 224,
+    critical: 6,
+    casesPerOneMillion: 181,
+    deathsPerOneMillion: 3,
+    tests: 44098,
+    testsPerOneMillion: 11052,
+    population: 3989993,
+    continent: Asia,
+    activePerOneMillion: 56.14,
+    recoveredPerOneMillion: 121.55,
+    criticalPerOneMillion: 1.5
+
+
+    Last updated: 1590076993459,
+    Country: Germany,
+    Country Info:
+      id: 276,
+      iso2: DE,
+      iso3: DEU,
+      Latitude: 51,
+      Longitude: 9,
+      <a>flag: https://disease.sh/assets/img/flags/de.png</a>
+
+    Cases: 178797,
+    New Cases: 266,
+    Deaths: 8271,
+    New Deaths: 1,
+    recovered: 158000,
+    active: 12526,
+    critical: 1045,
+    casesPerOneMillion: 2135,
+    deathsPerOneMillion: 99,
+    tests: 3595059,
+    testsPerOneMillion: 42924,
+    population: 83754315,
+    continent: Europe,
+    activePerOneMillion: 149.56,
+    recoveredPerOneMillion: 1886.47,
+    criticalPerOneMillion: 12.48
+
+
+    Last updated: 1590076993539,
+    Country: Ghana,
+    Country Info:
+      id: 288,
+      iso2: GH,
+      iso3: GHA,
+      Latitude: 8,
+      Longitude: -2,
+      <a>flag: https://disease.sh/assets/img/flags/gh.png</a>
+
+    Cases: 6269,
+    New Cases: 0,
+    Deaths: 31,
+    New Deaths: 0,
+    recovered: 1898,
+    active: 4340,
+    critical: 8,
+    casesPerOneMillion: 202,
+    deathsPerOneMillion: 1,
+    tests: 187929,
+    testsPerOneMillion: 6063,
+    population: 30994975,
+    continent: Africa,
+    activePerOneMillion: 140.02,
+    recoveredPerOneMillion: 61.24,
+    criticalPerOneMillion: 0.26
+
+
+    Last updated: 1590076993670,
+    Country: Gibraltar,
+    Country Info:
+      id: 292,
+      iso2: GI,
+      iso3: GIB,
+      Latitude: 36.1833,
+      Longitude: -5.3667,
+      <a>flag: https://disease.sh/assets/img/flags/gi.png</a>
+
+    Cases: 149,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 145,
+    active: 4,
+    critical: 0,
+    casesPerOneMillion: 4422,
+    deathsPerOneMillion: 0,
+    tests: 5615,
+    testsPerOneMillion: 166657,
+    population: 33692,
+    continent: Europe,
+    activePerOneMillion: 118.72,
+    recoveredPerOneMillion: 4303.69,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993553,
+    Country: Greece,
+    Country Info:
+      id: 300,
+      iso2: GR,
+      iso3: GRC,
+      Latitude: 39,
+      Longitude: 22,
+      <a>flag: https://disease.sh/assets/img/flags/gr.png</a>
+
+    Cases: 2853,
+    New Cases: 3,
+    Deaths: 168,
+    New Deaths: 2,
+    recovered: 1374,
+    active: 1311,
+    critical: 21,
+    casesPerOneMillion: 274,
+    deathsPerOneMillion: 16,
+    tests: 139445,
+    testsPerOneMillion: 13372,
+    population: 10428469,
+    continent: Europe,
+    activePerOneMillion: 125.71,
+    recoveredPerOneMillion: 131.75,
+    criticalPerOneMillion: 2.01
+
+
+    Last updated: 1590076993735,
+    Country: Greenland,
+    Country Info:
+      id: 304,
+      iso2: GL,
+      iso3: GRL,
+      Latitude: 72,
+      Longitude: -40,
+      <a>flag: https://disease.sh/assets/img/flags/gl.png</a>
+
+    Cases: 11,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 11,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 194,
+    deathsPerOneMillion: 0,
+    tests: 1767,
+    testsPerOneMillion: 31132,
+    population: 56759,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 193.8,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993720,
+    Country: Grenada,
+    Country Info:
+      id: 308,
+      iso2: GD,
+      iso3: GRD,
+      Latitude: 12.1167,
+      Longitude: -61.6667,
+      <a>flag: https://disease.sh/assets/img/flags/gd.png</a>
+
+    Cases: 22,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 17,
+    active: 5,
+    critical: 4,
+    casesPerOneMillion: 196,
+    deathsPerOneMillion: 0,
+    tests: 3007,
+    testsPerOneMillion: 26737,
+    population: 112465,
+    continent: North America,
+    activePerOneMillion: 44.46,
+    recoveredPerOneMillion: 151.16,
+    criticalPerOneMillion: 35.57
+
+
+    Last updated: 1590076993668,
+    Country: Guadeloupe,
+    Country Info:
+      id: 312,
+      iso2: GP,
+      iso3: GLP,
+      Latitude: 16.25,
+      Longitude: -61.5833,
+      <a>flag: https://disease.sh/assets/img/flags/gp.png</a>
+
+    Cases: 155,
+    New Cases: 0,
+    Deaths: 13,
+    New Deaths: 0,
+    recovered: 109,
+    active: 33,
+    critical: 3,
+    casesPerOneMillion: 387,
+    deathsPerOneMillion: 32,
+    tests: 2866,
+    testsPerOneMillion: 7163,
+    population: 400117,
+    continent: North America,
+    activePerOneMillion: 82.48,
+    recoveredPerOneMillion: 272.42,
+    criticalPerOneMillion: 7.5
+
+
+    Last updated: 1590076993560,
+    Country: Guatemala,
+    Country Info:
+      id: 320,
+      iso2: GT,
+      iso3: GTM,
+      Latitude: 15.5,
+      Longitude: -90.25,
+      <a>flag: https://disease.sh/assets/img/flags/gt.png</a>
+
+    Cases: 2265,
+    New Cases: 132,
+    Deaths: 45,
+    New Deaths: 2,
+    recovered: 159,
+    active: 2061,
+    critical: 5,
+    casesPerOneMillion: 127,
+    deathsPerOneMillion: 3,
+    tests: 20820,
+    testsPerOneMillion: 1165,
+    population: 17876171,
+    continent: North America,
+    activePerOneMillion: 115.29,
+    recoveredPerOneMillion: 8.89,
+    criticalPerOneMillion: 0.28
+
+
+    Last updated: 1590076993552,
+    Country: Guinea,
+    Country Info:
+      id: 324,
+      iso2: GN,
+      iso3: GIN,
+      Latitude: 11,
+      Longitude: -10,
+      <a>flag: https://disease.sh/assets/img/flags/gn.png</a>
+
+    Cases: 2863,
+    New Cases: 0,
+    Deaths: 18,
+    New Deaths: 0,
+    recovered: 1525,
+    active: 1320,
+    critical: 18,
+    casesPerOneMillion: 219,
+    deathsPerOneMillion: 1,
+    tests: 10304,
+    testsPerOneMillion: 787,
+    population: 13088713,
+    continent: Africa,
+    activePerOneMillion: 100.85,
+    recoveredPerOneMillion: 116.51,
+    criticalPerOneMillion: 1.38
+
+
+    Last updated: 1590076993588,
+    Country: Guinea-Bissau,
+    Country Info:
+      id: 624,
+      iso2: GW,
+      iso3: GNB,
+      Latitude: 12,
+      Longitude: -15,
+      <a>flag: https://disease.sh/assets/img/flags/gw.png</a>
+
+    Cases: 1089,
+    New Cases: 0,
+    Deaths: 6,
+    New Deaths: 0,
+    recovered: 42,
+    active: 1041,
+    critical: 0,
+    casesPerOneMillion: 555,
+    deathsPerOneMillion: 3,
+    tests: 1500,
+    testsPerOneMillion: 764,
+    population: 1962338,
+    continent: Africa,
+    activePerOneMillion: 530.49,
+    recoveredPerOneMillion: 21.4,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993681,
+    Country: Guyana,
+    Country Info:
+      id: 328,
+      iso2: GY,
+      iso3: GUY,
+      Latitude: 5,
+      Longitude: -59,
+      <a>flag: https://disease.sh/assets/img/flags/gy.png</a>
+
+    Cases: 125,
+    New Cases: 0,
+    Deaths: 10,
+    New Deaths: 0,
+    recovered: 47,
+    active: 68,
+    critical: 3,
+    casesPerOneMillion: 159,
+    deathsPerOneMillion: 13,
+    tests: 1295,
+    testsPerOneMillion: 1647,
+    population: 786129,
+    continent: South America,
+    activePerOneMillion: 86.5,
+    recoveredPerOneMillion: 59.79,
+    criticalPerOneMillion: 3.82
+
+
+    Last updated: 1590076993614,
+    Country: Haiti,
+    Country Info:
+      id: 332,
+      iso2: HT,
+      iso3: HTI,
+      Latitude: 19,
+      Longitude: -72.4167,
+      <a>flag: https://disease.sh/assets/img/flags/ht.png</a>
+
+    Cases: 663,
+    New Cases: 67,
+    Deaths: 22,
+    New Deaths: 0,
+    recovered: 21,
+    active: 620,
+    critical: 0,
+    casesPerOneMillion: 58,
+    deathsPerOneMillion: 2,
+    tests: 2270,
+    testsPerOneMillion: 199,
+    population: 11386485,
+    continent: North America,
+    activePerOneMillion: 54.45,
+    recoveredPerOneMillion: 1.84,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993732,
+    Country: Holy See (Vatican City State),
+    Country Info:
+      id: 336,
+      iso2: VA,
+      iso3: VAT,
+      Latitude: 41.9,
+      Longitude: 12.45,
+      <a>flag: https://disease.sh/assets/img/flags/va.png</a>
+
+    Cases: 12,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 2,
+    active: 10,
+    critical: 0,
+    casesPerOneMillion: 14981,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 801,
+    continent: Europe,
+    activePerOneMillion: 12484.39,
+    recoveredPerOneMillion: 2496.88,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993549,
+    Country: Honduras,
+    Country Info:
+      id: 340,
+      iso2: HN,
+      iso3: HND,
+      Latitude: 15,
+      Longitude: -86.5,
+      <a>flag: https://disease.sh/assets/img/flags/hn.png</a>
+
+    Cases: 3100,
+    New Cases: 145,
+    Deaths: 151,
+    New Deaths: 4,
+    recovered: 355,
+    active: 2594,
+    critical: 13,
+    casesPerOneMillion: 314,
+    deathsPerOneMillion: 15,
+    tests: 11315,
+    testsPerOneMillion: 1145,
+    population: 9886106,
+    continent: North America,
+    activePerOneMillion: 262.39,
+    recoveredPerOneMillion: 35.91,
+    criticalPerOneMillion: 1.31
+
+
+    Last updated: 1590076993589,
+    Country: Hong Kong,
+    Country Info:
+      id: 344,
+      iso2: HK,
+      iso3: HKG,
+      Latitude: 22.25,
+      Longitude: 114.1667,
+      <a>flag: https://disease.sh/assets/img/flags/hk.png</a>
+
+    Cases: 1064,
+    New Cases: 8,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 1029,
+    active: 31,
+    critical: 1,
+    casesPerOneMillion: 142,
+    deathsPerOneMillion: 0.5,
+    tests: 168291,
+    testsPerOneMillion: 22468,
+    population: 7490095,
+    continent: Asia,
+    activePerOneMillion: 4.14,
+    recoveredPerOneMillion: 137.38,
+    criticalPerOneMillion: 0.13
+
+
+    Last updated: 1590076993547,
+    Country: Hungary,
+    Country Info:
+      id: 348,
+      iso2: HU,
+      iso3: HUN,
+      Latitude: 47,
+      Longitude: 20,
+      <a>flag: https://disease.sh/assets/img/flags/hu.png</a>
+
+    Cases: 3641,
+    New Cases: 43,
+    Deaths: 473,
+    New Deaths: 3,
+    recovered: 1509,
+    active: 1659,
+    critical: 27,
+    casesPerOneMillion: 377,
+    deathsPerOneMillion: 49,
+    tests: 147511,
+    testsPerOneMillion: 15266,
+    population: 9662990,
+    continent: Europe,
+    activePerOneMillion: 171.69,
+    recoveredPerOneMillion: 156.16,
+    criticalPerOneMillion: 2.79
+
+
+    Last updated: 1590076993568,
+    Country: Iceland,
+    Country Info:
+      id: 352,
+      iso2: IS,
+      iso3: ISL,
+      Latitude: 65,
+      Longitude: -18,
+      <a>flag: https://disease.sh/assets/img/flags/is.png</a>
+
+    Cases: 1803,
+    New Cases: 0,
+    Deaths: 10,
+    New Deaths: 0,
+    recovered: 1790,
+    active: 3,
+    critical: 0,
+    casesPerOneMillion: 5287,
+    deathsPerOneMillion: 29,
+    tests: 57628,
+    testsPerOneMillion: 169000,
+    population: 340994,
+    continent: Europe,
+    activePerOneMillion: 8.8,
+    recoveredPerOneMillion: 5249.36,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993464,
+    Country: India,
+    Country Info:
+      id: 356,
+      iso2: IN,
+      iso3: IND,
+      Latitude: 20,
+      Longitude: 77,
+      <a>flag: https://disease.sh/assets/img/flags/in.png</a>
+
+    Cases: 114478,
+    New Cases: 2450,
+    Deaths: 3465,
+    New Deaths: 31,
+    recovered: 46002,
+    active: 65011,
+    critical: 0,
+    casesPerOneMillion: 83,
+    deathsPerOneMillion: 3,
+    tests: 2615920,
+    testsPerOneMillion: 1898,
+    population: 1378455853,
+    continent: Asia,
+    activePerOneMillion: 47.16,
+    recoveredPerOneMillion: 33.37,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993495,
+    Country: Indonesia,
+    Country Info:
+      id: 360,
+      iso2: ID,
+      iso3: IDN,
+      Latitude: -5,
+      Longitude: 120,
+      <a>flag: https://disease.sh/assets/img/flags/id.png</a>
+
+    Cases: 20162,
+    New Cases: 973,
+    Deaths: 1278,
+    New Deaths: 36,
+    recovered: 4838,
+    active: 14046,
+    critical: 0,
+    casesPerOneMillion: 74,
+    deathsPerOneMillion: 5,
+    tests: 219975,
+    testsPerOneMillion: 805,
+    population: 273192339,
+    continent: Asia,
+    activePerOneMillion: 51.41,
+    recoveredPerOneMillion: 17.71,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993462,
+    Country: Iran,
+    Country Info:
+      id: 364,
+      iso2: IR,
+      iso3: IRN,
+      Latitude: 32,
+      Longitude: 53,
+      <a>flag: https://disease.sh/assets/img/flags/ir.png</a>
+
+    Cases: 129341,
+    New Cases: 2392,
+    Deaths: 7249,
+    New Deaths: 66,
+    recovered: 100564,
+    active: 21528,
+    critical: 2655,
+    casesPerOneMillion: 1542,
+    deathsPerOneMillion: 86,
+    tests: 746045,
+    testsPerOneMillion: 8895,
+    population: 83868516,
+    continent: Asia,
+    activePerOneMillion: 256.69,
+    recoveredPerOneMillion: 1199.07,
+    criticalPerOneMillion: 31.66
+
+
+    Last updated: 1590076993546,
+    Country: Iraq,
+    Country Info:
+      id: 368,
+      iso2: IQ,
+      iso3: IRQ,
+      Latitude: 33,
+      Longitude: 44,
+      <a>flag: https://disease.sh/assets/img/flags/iq.png</a>
+
+    Cases: 3724,
+    New Cases: 0,
+    Deaths: 134,
+    New Deaths: 0,
+    recovered: 2438,
+    active: 1152,
+    critical: 0,
+    casesPerOneMillion: 93,
+    deathsPerOneMillion: 3,
+    tests: 149701,
+    testsPerOneMillion: 3732,
+    population: 40113204,
+    continent: Asia,
+    activePerOneMillion: 28.72,
+    recoveredPerOneMillion: 60.78,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993494,
+    Country: Ireland,
+    Country Info:
+      id: 372,
+      iso2: IE,
+      iso3: IRL,
+      Latitude: 53,
+      Longitude: -8,
+      <a>flag: https://disease.sh/assets/img/flags/ie.png</a>
+
+    Cases: 24315,
+    New Cases: 0,
+    Deaths: 1571,
+    New Deaths: 0,
+    recovered: 21060,
+    active: 1684,
+    critical: 54,
+    casesPerOneMillion: 4931,
+    deathsPerOneMillion: 319,
+    tests: 295626,
+    testsPerOneMillion: 59947,
+    population: 4931451,
+    continent: Europe,
+    activePerOneMillion: 341.48,
+    recoveredPerOneMillion: 4270.55,
+    criticalPerOneMillion: 10.95
+
+
+    Last updated: 1590076993643,
+    Country: Isle of Man,
+    Country Info:
+      id: 833,
+      iso2: IM,
+      iso3: IMN,
+      Latitude: 54.23,
+      Longitude: -4.55,
+      <a>flag: https://disease.sh/assets/img/flags/im.png</a>
+
+    Cases: 336,
+    New Cases: 0,
+    Deaths: 24,
+    New Deaths: 0,
+    recovered: 303,
+    active: 9,
+    critical: 2,
+    casesPerOneMillion: 3954,
+    deathsPerOneMillion: 282,
+    tests: 4353,
+    testsPerOneMillion: 51222,
+    population: 84983,
+    continent: Europe,
+    activePerOneMillion: 105.9,
+    recoveredPerOneMillion: 3565.42,
+    criticalPerOneMillion: 23.53
+
+
+    Last updated: 1590076993504,
+    Country: Israel,
+    Country Info:
+      id: 376,
+      iso2: IL,
+      iso3: ISR,
+      Latitude: 31.5,
+      Longitude: 34.75,
+      <a>flag: https://disease.sh/assets/img/flags/il.png</a>
+
+    Cases: 16670,
+    New Cases: 3,
+    Deaths: 279,
+    New Deaths: 0,
+    recovered: 13617,
+    active: 2774,
+    critical: 47,
+    casesPerOneMillion: 1929,
+    deathsPerOneMillion: 32,
+    tests: 524584,
+    testsPerOneMillion: 60718,
+    population: 8639658,
+    continent: Asia,
+    activePerOneMillion: 321.08,
+    recoveredPerOneMillion: 1576.1,
+    criticalPerOneMillion: 5.44
+
+
+    Last updated: 1590076993455,
+    Country: Italy,
+    Country Info:
+      id: 380,
+      iso2: IT,
+      iso3: ITA,
+      Latitude: 42.8333,
+      Longitude: 12.8333,
+      <a>flag: https://disease.sh/assets/img/flags/it.png</a>
+
+    Cases: 227364,
+    New Cases: 0,
+    Deaths: 32330,
+    New Deaths: 0,
+    recovered: 132282,
+    active: 62752,
+    critical: 676,
+    casesPerOneMillion: 3760,
+    deathsPerOneMillion: 535,
+    tests: 3171719,
+    testsPerOneMillion: 52450,
+    population: 60471440,
+    continent: Europe,
+    activePerOneMillion: 1037.71,
+    recoveredPerOneMillion: 2187.51,
+    criticalPerOneMillion: 11.18
+
+
+    Last updated: 1590076993621,
+    Country: Jamaica,
+    Country Info:
+      id: 388,
+      iso2: JM,
+      iso3: JAM,
+      Latitude: 18.25,
+      Longitude: -77.5,
+      <a>flag: https://disease.sh/assets/img/flags/jm.png</a>
+
+    Cases: 529,
+    New Cases: 9,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 171,
+    active: 349,
+    critical: 0,
+    casesPerOneMillion: 179,
+    deathsPerOneMillion: 3,
+    tests: 9021,
+    testsPerOneMillion: 3048,
+    population: 2959730,
+    continent: North America,
+    activePerOneMillion: 117.92,
+    recoveredPerOneMillion: 57.78,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993506,
+    Country: Japan,
+    Country Info:
+      id: 392,
+      iso2: JP,
+      iso3: JPN,
+      Latitude: 36,
+      Longitude: 138,
+      <a>flag: https://disease.sh/assets/img/flags/jp.png</a>
+
+    Cases: 16385,
+    New Cases: 0,
+    Deaths: 771,
+    New Deaths: 0,
+    recovered: 12286,
+    active: 3328,
+    critical: 210,
+    casesPerOneMillion: 130,
+    deathsPerOneMillion: 6,
+    tests: 258277,
+    testsPerOneMillion: 2041,
+    population: 126518009,
+    continent: Asia,
+    activePerOneMillion: 26.3,
+    recoveredPerOneMillion: 97.11,
+    criticalPerOneMillion: 1.66
+
+
+    Last updated: 1590076993613,
+    Country: Jordan,
+    Country Info:
+      id: 400,
+      iso2: JO,
+      iso3: JOR,
+      Latitude: 31,
+      Longitude: 36,
+      <a>flag: https://disease.sh/assets/img/flags/jo.png</a>
+
+    Cases: 672,
+    New Cases: 0,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 446,
+    active: 217,
+    critical: 5,
+    casesPerOneMillion: 66,
+    deathsPerOneMillion: 0.9,
+    tests: 152615,
+    testsPerOneMillion: 14975,
+    population: 10191568,
+    continent: Asia,
+    activePerOneMillion: 21.29,
+    recoveredPerOneMillion: 43.76,
+    criticalPerOneMillion: 0.49
+
+
+    Last updated: 1590076993528,
+    Country: Kazakhstan,
+    Country Info:
+      id: 398,
+      iso2: KZ,
+      iso3: KAZ,
+      Latitude: 48,
+      Longitude: 68,
+      <a>flag: https://disease.sh/assets/img/flags/kz.png</a>
+
+    Cases: 7234,
+    New Cases: 265,
+    Deaths: 35,
+    New Deaths: 0,
+    recovered: 3777,
+    active: 3422,
+    critical: 31,
+    casesPerOneMillion: 386,
+    deathsPerOneMillion: 2,
+    tests: 591502,
+    testsPerOneMillion: 31545,
+    population: 18750814,
+    continent: Asia,
+    activePerOneMillion: 182.5,
+    recoveredPerOneMillion: 201.43,
+    criticalPerOneMillion: 1.65
+
+
+    Last updated: 1590076993592,
+    Country: Kenya,
+    Country Info:
+      id: 404,
+      iso2: KE,
+      iso3: KEN,
+      Latitude: 1,
+      Longitude: 38,
+      <a>flag: https://disease.sh/assets/img/flags/ke.png</a>
+
+    Cases: 1029,
+    New Cases: 0,
+    Deaths: 50,
+    New Deaths: 0,
+    recovered: 366,
+    active: 613,
+    critical: 1,
+    casesPerOneMillion: 19,
+    deathsPerOneMillion: 0.9,
+    tests: 49405,
+    testsPerOneMillion: 921,
+    population: 53628156,
+    continent: Africa,
+    activePerOneMillion: 11.43,
+    recoveredPerOneMillion: 6.82,
+    criticalPerOneMillion: 0.02
+
+
+    Last updated: 1590076993501,
+    Country: Kuwait,
+    Country Info:
+      id: 414,
+      iso2: KW,
+      iso3: KWT,
+      Latitude: 29.3375,
+      Longitude: 47.6581,
+      <a>flag: https://disease.sh/assets/img/flags/kw.png</a>
+
+    Cases: 18609,
+    New Cases: 1041,
+    Deaths: 129,
+    New Deaths: 5,
+    recovered: 5205,
+    active: 13275,
+    critical: 181,
+    casesPerOneMillion: 4365,
+    deathsPerOneMillion: 30,
+    tests: 261071,
+    testsPerOneMillion: 61238,
+    population: 4263192,
+    continent: Asia,
+    activePerOneMillion: 3113.86,
+    recoveredPerOneMillion: 1220.92,
+    criticalPerOneMillion: 42.46
+
+
+    Last updated: 1590076993585,
+    Country: Kyrgyzstan,
+    Country Info:
+      id: 417,
+      iso2: KG,
+      iso3: KGZ,
+      Latitude: 41,
+      Longitude: 75,
+      <a>flag: https://disease.sh/assets/img/flags/kg.png</a>
+
+    Cases: 1313,
+    New Cases: 43,
+    Deaths: 14,
+    New Deaths: 0,
+    recovered: 923,
+    active: 376,
+    critical: 5,
+    casesPerOneMillion: 202,
+    deathsPerOneMillion: 2,
+    tests: 94441,
+    testsPerOneMillion: 14504,
+    population: 6511518,
+    continent: Asia,
+    activePerOneMillion: 57.74,
+    recoveredPerOneMillion: 141.75,
+    criticalPerOneMillion: 0.77
+
+
+    Last updated: 1590076993722,
+    Country: Lao People's Democratic Republic,
+    Country Info:
+      id: 418,
+      iso2: LA,
+      iso3: LAO,
+      Latitude: 18,
+      Longitude: 105,
+      <a>flag: https://disease.sh/assets/img/flags/la.png</a>
+
+    Cases: 19,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 14,
+    active: 5,
+    critical: 0,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0,
+    tests: 4812,
+    testsPerOneMillion: 663,
+    population: 7263242,
+    continent: Asia,
+    activePerOneMillion: 0.69,
+    recoveredPerOneMillion: 1.93,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993593,
+    Country: Latvia,
+    Country Info:
+      id: 428,
+      iso2: LV,
+      iso3: LVA,
+      Latitude: 57,
+      Longitude: 25,
+      <a>flag: https://disease.sh/assets/img/flags/lv.png</a>
+
+    Cases: 1025,
+    New Cases: 9,
+    Deaths: 22,
+    New Deaths: 1,
+    recovered: 694,
+    active: 309,
+    critical: 2,
+    casesPerOneMillion: 543,
+    deathsPerOneMillion: 12,
+    tests: 94621,
+    testsPerOneMillion: 50108,
+    population: 1888351,
+    continent: Europe,
+    activePerOneMillion: 163.63,
+    recoveredPerOneMillion: 367.52,
+    criticalPerOneMillion: 1.06
+
+
+    Last updated: 1590076993594,
+    Country: Lebanon,
+    Country Info:
+      id: 422,
+      iso2: LB,
+      iso3: LBN,
+      Latitude: 33.8333,
+      Longitude: 35.8333,
+      <a>flag: https://disease.sh/assets/img/flags/lb.png</a>
+
+    Cases: 1024,
+    New Cases: 63,
+    Deaths: 26,
+    New Deaths: 0,
+    recovered: 663,
+    active: 335,
+    critical: 4,
+    casesPerOneMillion: 150,
+    deathsPerOneMillion: 4,
+    tests: 67510,
+    testsPerOneMillion: 9886,
+    population: 6828703,
+    continent: Asia,
+    activePerOneMillion: 49.06,
+    recoveredPerOneMillion: 97.09,
+    criticalPerOneMillion: 0.59
+
+
+    Last updated: 1590076993743,
+    Country: Lesotho,
+    Country Info:
+      id: 426,
+      iso2: LS,
+      iso3: LSO,
+      Latitude: -29.5,
+      Longitude: 28.5,
+      <a>flag: https://disease.sh/assets/img/flags/ls.png</a>
+
+    Cases: 1,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 0,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 0.5,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 2140328,
+    continent: Africa,
+    activePerOneMillion: 0.47,
+    recoveredPerOneMillion: 0,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993651,
+    Country: Liberia,
+    Country Info:
+      id: 430,
+      iso2: LR,
+      iso3: LBR,
+      Latitude: 6.5,
+      Longitude: -9.5,
+      <a>flag: https://disease.sh/assets/img/flags/lr.png</a>
+
+    Cases: 240,
+    New Cases: 2,
+    Deaths: 23,
+    New Deaths: 0,
+    recovered: 131,
+    active: 86,
+    critical: 0,
+    casesPerOneMillion: 48,
+    deathsPerOneMillion: 5,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 5043216,
+    continent: Africa,
+    activePerOneMillion: 17.05,
+    recoveredPerOneMillion: 25.98,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993704,
+    Country: Libyan Arab Jamahiriya,
+    Country Info:
+      id: 434,
+      iso2: LY,
+      iso3: LBY,
+      Latitude: 25,
+      Longitude: 17,
+      <a>flag: https://disease.sh/assets/img/flags/ly.png</a>
+
+    Cases: 71,
+    New Cases: 2,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 35,
+    active: 33,
+    critical: 0,
+    casesPerOneMillion: 10,
+    deathsPerOneMillion: 0.4,
+    tests: 4351,
+    testsPerOneMillion: 634,
+    population: 6860437,
+    continent: Africa,
+    activePerOneMillion: 4.81,
+    recoveredPerOneMillion: 5.1,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993697,
+    Country: Liechtenstein,
+    Country Info:
+      id: 438,
+      iso2: LI,
+      iso3: LIE,
+      Latitude: 47.1667,
+      Longitude: 9.5333,
+      <a>flag: https://disease.sh/assets/img/flags/li.png</a>
+
+    Cases: 82,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 55,
+    active: 26,
+    critical: 0,
+    casesPerOneMillion: 2151,
+    deathsPerOneMillion: 26,
+    tests: 900,
+    testsPerOneMillion: 23612,
+    population: 38116,
+    continent: Europe,
+    activePerOneMillion: 682.13,
+    recoveredPerOneMillion: 1442.96,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993574,
+    Country: Lithuania,
+    Country Info:
+      id: 440,
+      iso2: LT,
+      iso3: LTU,
+      Latitude: 56,
+      Longitude: 24,
+      <a>flag: https://disease.sh/assets/img/flags/lt.png</a>
+
+    Cases: 1593,
+    New Cases: 16,
+    Deaths: 61,
+    New Deaths: 1,
+    recovered: 1049,
+    active: 483,
+    critical: 17,
+    casesPerOneMillion: 584,
+    deathsPerOneMillion: 22,
+    tests: 253004,
+    testsPerOneMillion: 92806,
+    population: 2726154,
+    continent: Europe,
+    activePerOneMillion: 177.17,
+    recoveredPerOneMillion: 384.79,
+    criticalPerOneMillion: 6.24
+
+
+    Last updated: 1590076993541,
+    Country: Luxembourg,
+    Country Info:
+      id: 442,
+      iso2: LU,
+      iso3: LUX,
+      Latitude: 49.75,
+      Longitude: 6.1667,
+      <a>flag: https://disease.sh/assets/img/flags/lu.png</a>
+
+    Cases: 3971,
+    New Cases: 0,
+    Deaths: 109,
+    New Deaths: 0,
+    recovered: 3728,
+    active: 134,
+    critical: 6,
+    casesPerOneMillion: 6356,
+    deathsPerOneMillion: 174,
+    tests: 64018,
+    testsPerOneMillion: 102465,
+    population: 624780,
+    continent: Europe,
+    activePerOneMillion: 214.48,
+    recoveredPerOneMillion: 5966.9,
+    criticalPerOneMillion: 9.6
+
+
+    Last updated: 1590076993737,
+    Country: MS Zaandam,
+    Country Info:
+      id: null,
+      iso2: null,
+      iso3: null,
+      Latitude: 0,
+      Longitude: 0,
+      <a>flag: https://disease.sh/assets/img/flags/unknown.png</a>
+
+    Cases: 9,
+    New Cases: 0,
+    Deaths: 2,
+    New Deaths: 0,
+    recovered: 0,
+    active: 7,
+    critical: 0,
+    casesPerOneMillion: 0,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 0,
+    continent: ,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 0,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993712,
+    Country: Macao,
+    Country Info:
+      id: 446,
+      iso2: MO,
+      iso3: MAC,
+      Latitude: 22.1667,
+      Longitude: 113.55,
+      <a>flag: https://disease.sh/assets/img/flags/mo.png</a>
+
+    Cases: 45,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 45,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 69,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 648306,
+    continent: Asia,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 69.41,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993565,
+    Country: Macedonia,
+    Country Info:
+      id: 807,
+      iso2: MK,
+      iso3: MKD,
+      Latitude: 41.8333,
+      Longitude: 22,
+      <a>flag: https://disease.sh/assets/img/flags/mk.png</a>
+
+    Cases: 1898,
+    New Cases: 40,
+    Deaths: 111,
+    New Deaths: 1,
+    recovered: 1378,
+    active: 409,
+    critical: 21,
+    casesPerOneMillion: 911,
+    deathsPerOneMillion: 53,
+    tests: 23316,
+    testsPerOneMillion: 11191,
+    population: 2083383,
+    continent: Europe,
+    activePerOneMillion: 196.32,
+    recoveredPerOneMillion: 661.42,
+    criticalPerOneMillion: 10.08
+
+
+    Last updated: 1590076993635,
+    Country: Madagascar,
+    Country Info:
+      id: 450,
+      iso2: MG,
+      iso3: MDG,
+      Latitude: -20,
+      Longitude: 47,
+      <a>flag: https://disease.sh/assets/img/flags/mg.png</a>
+
+    Cases: 405,
+    New Cases: 34,
+    Deaths: 2,
+    New Deaths: 0,
+    recovered: 131,
+    active: 272,
+    critical: 1,
+    casesPerOneMillion: 15,
+    deathsPerOneMillion: 0.07,
+    tests: 5670,
+    testsPerOneMillion: 205,
+    population: 27603501,
+    continent: Africa,
+    activePerOneMillion: 9.85,
+    recoveredPerOneMillion: 4.75,
+    criticalPerOneMillion: 0.04
+
+
+    Last updated: 1590076993705,
+    Country: Malawi,
+    Country Info:
+      id: 454,
+      iso2: MW,
+      iso3: MWI,
+      Latitude: -13.5,
+      Longitude: 34,
+      <a>flag: https://disease.sh/assets/img/flags/mw.png</a>
+
+    Cases: 71,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 27,
+    active: 41,
+    critical: 1,
+    casesPerOneMillion: 4,
+    deathsPerOneMillion: 0.2,
+    tests: 1803,
+    testsPerOneMillion: 95,
+    population: 19069143,
+    continent: Africa,
+    activePerOneMillion: 2.15,
+    recoveredPerOneMillion: 1.42,
+    criticalPerOneMillion: 0.05
+
+
+    Last updated: 1590076993532,
+    Country: Malaysia,
+    Country Info:
+      id: 458,
+      iso2: MY,
+      iso3: MYS,
+      Latitude: 2.5,
+      Longitude: 112.5,
+      <a>flag: https://disease.sh/assets/img/flags/my.png</a>
+
+    Cases: 7059,
+    New Cases: 50,
+    Deaths: 114,
+    New Deaths: 0,
+    recovered: 5796,
+    active: 1149,
+    critical: 10,
+    casesPerOneMillion: 218,
+    deathsPerOneMillion: 4,
+    tests: 481411,
+    testsPerOneMillion: 14896,
+    population: 32317999,
+    continent: Asia,
+    activePerOneMillion: 35.55,
+    recoveredPerOneMillion: 179.34,
+    criticalPerOneMillion: 0.31
+
+
+    Last updated: 1590076993586,
+    Country: Maldives,
+    Country Info:
+      id: 462,
+      iso2: MV,
+      iso3: MDV,
+      Latitude: 3.25,
+      Longitude: 73,
+      <a>flag: https://disease.sh/assets/img/flags/mv.png</a>
+
+    Cases: 1216,
+    New Cases: 30,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 91,
+    active: 1121,
+    critical: 9,
+    casesPerOneMillion: 2254,
+    deathsPerOneMillion: 7,
+    tests: 11775,
+    testsPerOneMillion: 21829,
+    population: 539417,
+    continent: Asia,
+    activePerOneMillion: 2078.17,
+    recoveredPerOneMillion: 168.7,
+    criticalPerOneMillion: 16.68
+
+
+    Last updated: 1590076993596,
+    Country: Mali,
+    Country Info:
+      id: 466,
+      iso2: ML,
+      iso3: MLI,
+      Latitude: 17,
+      Longitude: -4,
+      <a>flag: https://disease.sh/assets/img/flags/ml.png</a>
+
+    Cases: 931,
+    New Cases: 0,
+    Deaths: 55,
+    New Deaths: 0,
+    recovered: 543,
+    active: 333,
+    critical: 0,
+    casesPerOneMillion: 46,
+    deathsPerOneMillion: 3,
+    tests: 3483,
+    testsPerOneMillion: 173,
+    population: 20178087,
+    continent: Africa,
+    activePerOneMillion: 16.5,
+    recoveredPerOneMillion: 26.91,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993616,
+    Country: Malta,
+    Country Info:
+      id: 470,
+      iso2: MT,
+      iso3: MLT,
+      Latitude: 35.8333,
+      Longitude: 14.5833,
+      <a>flag: https://disease.sh/assets/img/flags/mt.png</a>
+
+    Cases: 599,
+    New Cases: 15,
+    Deaths: 6,
+    New Deaths: 0,
+    recovered: 468,
+    active: 125,
+    critical: 1,
+    casesPerOneMillion: 1357,
+    deathsPerOneMillion: 14,
+    tests: 56224,
+    testsPerOneMillion: 127373,
+    population: 441413,
+    continent: Europe,
+    activePerOneMillion: 283.18,
+    recoveredPerOneMillion: 1060.23,
+    criticalPerOneMillion: 2.27
+
+
+    Last updated: 1590076993657,
+    Country: Martinique,
+    Country Info:
+      id: 474,
+      iso2: MQ,
+      iso3: MTQ,
+      Latitude: 14.6667,
+      Longitude: -61,
+      <a>flag: https://disease.sh/assets/img/flags/mq.png</a>
+
+    Cases: 192,
+    New Cases: 0,
+    Deaths: 14,
+    New Deaths: 0,
+    recovered: 91,
+    active: 87,
+    critical: 0,
+    casesPerOneMillion: 512,
+    deathsPerOneMillion: 37,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 375297,
+    continent: North America,
+    activePerOneMillion: 231.82,
+    recoveredPerOneMillion: 242.47,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993674,
+    Country: Mauritania,
+    Country Info:
+      id: 478,
+      iso2: MR,
+      iso3: MRT,
+      Latitude: 20,
+      Longitude: -12,
+      <a>flag: https://disease.sh/assets/img/flags/mr.png</a>
+
+    Cases: 141,
+    New Cases: 0,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 7,
+    active: 130,
+    critical: 0,
+    casesPerOneMillion: 30,
+    deathsPerOneMillion: 0.9,
+    tests: 2583,
+    testsPerOneMillion: 557,
+    population: 4634593,
+    continent: Africa,
+    activePerOneMillion: 28.05,
+    recoveredPerOneMillion: 1.51,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993644,
+    Country: Mauritius,
+    Country Info:
+      id: 480,
+      iso2: MU,
+      iso3: MUS,
+      Latitude: -20.2833,
+      Longitude: 57.55,
+      <a>flag: https://disease.sh/assets/img/flags/mu.png</a>
+
+    Cases: 332,
+    New Cases: 0,
+    Deaths: 10,
+    New Deaths: 0,
+    recovered: 322,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 261,
+    deathsPerOneMillion: 8,
+    tests: 98075,
+    testsPerOneMillion: 77131,
+    population: 1271536,
+    continent: Africa,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 253.24,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993582,
+    Country: Mayotte,
+    Country Info:
+      id: 175,
+      iso2: YT,
+      iso3: MYT,
+      Latitude: -12.8333,
+      Longitude: 45.1667,
+      <a>flag: https://disease.sh/assets/img/flags/yt.png</a>
+
+    Cases: 1475,
+    New Cases: 0,
+    Deaths: 19,
+    New Deaths: 0,
+    recovered: 894,
+    active: 562,
+    critical: 11,
+    casesPerOneMillion: 5423,
+    deathsPerOneMillion: 70,
+    tests: 5200,
+    testsPerOneMillion: 19117,
+    population: 272012,
+    continent: Africa,
+    activePerOneMillion: 2066.09,
+    recoveredPerOneMillion: 3286.62,
+    criticalPerOneMillion: 40.44
+
+
+    Last updated: 1590076993470,
+    Country: Mexico,
+    Country Info:
+      id: 484,
+      iso2: MX,
+      iso3: MEX,
+      Latitude: 23,
+      Longitude: -102,
+      <a>flag: https://disease.sh/assets/img/flags/mx.png</a>
+
+    Cases: 56594,
+    New Cases: 2248,
+    Deaths: 6090,
+    New Deaths: 424,
+    recovered: 38876,
+    active: 11628,
+    critical: 378,
+    casesPerOneMillion: 439,
+    deathsPerOneMillion: 47,
+    tests: 185755,
+    testsPerOneMillion: 1442,
+    population: 128777650,
+    continent: North America,
+    activePerOneMillion: 90.3,
+    recoveredPerOneMillion: 301.88,
+    criticalPerOneMillion: 2.94
+
+
+    Last updated: 1590076993534,
+    Country: Moldova,
+    Country Info:
+      id: 498,
+      iso2: MD,
+      iso3: MDA,
+      Latitude: 47,
+      Longitude: 29,
+      <a>flag: https://disease.sh/assets/img/flags/md.png</a>
+
+    Cases: 6704,
+    New Cases: 151,
+    Deaths: 233,
+    New Deaths: 5,
+    recovered: 2953,
+    active: 3518,
+    critical: 251,
+    casesPerOneMillion: 1661,
+    deathsPerOneMillion: 58,
+    tests: 40565,
+    testsPerOneMillion: 10053,
+    population: 4034973,
+    continent: Europe,
+    activePerOneMillion: 871.88,
+    recoveredPerOneMillion: 731.85,
+    criticalPerOneMillion: 62.21
+
+
+    Last updated: 1590076993693,
+    Country: Monaco,
+    Country Info:
+      id: 492,
+      iso2: MC,
+      iso3: MCO,
+      Latitude: 43.7333,
+      Longitude: 7.4,
+      <a>flag: https://disease.sh/assets/img/flags/mc.png</a>
+
+    Cases: 97,
+    New Cases: 0,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 90,
+    active: 3,
+    critical: 1,
+    casesPerOneMillion: 2474,
+    deathsPerOneMillion: 102,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 39211,
+    continent: Europe,
+    activePerOneMillion: 76.51,
+    recoveredPerOneMillion: 2295.27,
+    criticalPerOneMillion: 25.5
+
+
+    Last updated: 1590076993678,
+    Country: Mongolia,
+    Country Info:
+      id: 496,
+      iso2: MN,
+      iso3: MNG,
+      Latitude: 46,
+      Longitude: 105,
+      <a>flag: https://disease.sh/assets/img/flags/mn.png</a>
+
+    Cases: 140,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 26,
+    active: 114,
+    critical: 27,
+    casesPerOneMillion: 43,
+    deathsPerOneMillion: 0,
+    tests: 11750,
+    testsPerOneMillion: 3591,
+    population: 3272084,
+    continent: Asia,
+    activePerOneMillion: 34.84,
+    recoveredPerOneMillion: 7.95,
+    criticalPerOneMillion: 8.25
+
+
+    Last updated: 1590076993645,
+    Country: Montenegro,
+    Country Info:
+      id: 499,
+      iso2: ME,
+      iso3: MNE,
+      Latitude: 42,
+      Longitude: 19,
+      <a>flag: https://disease.sh/assets/img/flags/me.png</a>
+
+    Cases: 324,
+    New Cases: 0,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 314,
+    active: 1,
+    critical: 2,
+    casesPerOneMillion: 516,
+    deathsPerOneMillion: 14,
+    tests: 10167,
+    testsPerOneMillion: 16188,
+    population: 628057,
+    continent: Europe,
+    activePerOneMillion: 1.59,
+    recoveredPerOneMillion: 499.95,
+    criticalPerOneMillion: 3.18
+
+
+    Last updated: 1590076993733,
+    Country: Montserrat,
+    Country Info:
+      id: 500,
+      iso2: MS,
+      iso3: MSR,
+      Latitude: 16.75,
+      Longitude: -62.2,
+      <a>flag: https://disease.sh/assets/img/flags/ms.png</a>
+
+    Cases: 11,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 10,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 2204,
+    deathsPerOneMillion: 200,
+    tests: 36,
+    testsPerOneMillion: 7212,
+    population: 4992,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 2003.21,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993530,
+    Country: Morocco,
+    Country Info:
+      id: 504,
+      iso2: MA,
+      iso3: MAR,
+      Latitude: 32,
+      Longitude: -5,
+      <a>flag: https://disease.sh/assets/img/flags/ma.png</a>
+
+    Cases: 7185,
+    New Cases: 52,
+    Deaths: 196,
+    New Deaths: 2,
+    recovered: 4212,
+    active: 2777,
+    critical: 1,
+    casesPerOneMillion: 195,
+    deathsPerOneMillion: 5,
+    tests: 111890,
+    testsPerOneMillion: 3036,
+    population: 36860148,
+    continent: Africa,
+    activePerOneMillion: 75.34,
+    recoveredPerOneMillion: 114.27,
+    criticalPerOneMillion: 0.03
+
+
+    Last updated: 1590076993666,
+    Country: Mozambique,
+    Country Info:
+      id: 508,
+      iso2: MZ,
+      iso3: MOZ,
+      Latitude: -18.25,
+      Longitude: 35,
+      <a>flag: https://disease.sh/assets/img/flags/mz.png</a>
+
+    Cases: 162,
+    New Cases: 6,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 48,
+    active: 114,
+    critical: 0,
+    casesPerOneMillion: 5,
+    deathsPerOneMillion: 0,
+    tests: 7063,
+    testsPerOneMillion: 227,
+    population: 31146622,
+    continent: Africa,
+    activePerOneMillion: 3.66,
+    recoveredPerOneMillion: 1.54,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993655,
+    Country: Myanmar,
+    Country Info:
+      id: 104,
+      iso2: MM,
+      iso3: MMR,
+      Latitude: 22,
+      Longitude: 98,
+      <a>flag: https://disease.sh/assets/img/flags/mm.png</a>
+
+    Cases: 199,
+    New Cases: 0,
+    Deaths: 6,
+    New Deaths: 0,
+    recovered: 108,
+    active: 85,
+    critical: 0,
+    casesPerOneMillion: 4,
+    deathsPerOneMillion: 0.1,
+    tests: 15838,
+    testsPerOneMillion: 291,
+    population: 54368782,
+    continent: Asia,
+    activePerOneMillion: 1.56,
+    recoveredPerOneMillion: 1.99,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993724,
+    Country: Namibia,
+    Country Info:
+      id: 516,
+      iso2: NA,
+      iso3: NAM,
+      Latitude: -22,
+      Longitude: 17,
+      <a>flag: https://disease.sh/assets/img/flags/na.png</a>
+
+    Cases: 18,
+    New Cases: 2,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 14,
+    active: 4,
+    critical: 0,
+    casesPerOneMillion: 7,
+    deathsPerOneMillion: 0,
+    tests: 2586,
+    testsPerOneMillion: 1020,
+    population: 2535445,
+    continent: Africa,
+    activePerOneMillion: 1.58,
+    recoveredPerOneMillion: 5.52,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993626,
+    Country: Nepal,
+    Country Info:
+      id: 524,
+      iso2: NP,
+      iso3: NPL,
+      Latitude: 28,
+      Longitude: 84,
+      <a>flag: https://disease.sh/assets/img/flags/np.png</a>
+
+    Cases: 457,
+    New Cases: 30,
+    Deaths: 3,
+    New Deaths: 1,
+    recovered: 49,
+    active: 405,
+    critical: 1,
+    casesPerOneMillion: 16,
+    deathsPerOneMillion: 0.1,
+    tests: 117431,
+    testsPerOneMillion: 4039,
+    population: 29074659,
+    continent: Asia,
+    activePerOneMillion: 13.93,
+    recoveredPerOneMillion: 1.69,
+    criticalPerOneMillion: 0.03
+
+
+    Last updated: 1590076993478,
+    Country: Netherlands,
+    Country Info:
+      id: 528,
+      iso2: NL,
+      iso3: NLD,
+      Latitude: 52.5,
+      Longitude: 5.75,
+      <a>flag: https://disease.sh/assets/img/flags/nl.png</a>
+
+    Cases: 44700,
+    New Cases: 253,
+    Deaths: 5775,
+    New Deaths: 27,
+    recovered: 0,
+    active: 38925,
+    critical: 255,
+    casesPerOneMillion: 2609,
+    deathsPerOneMillion: 337,
+    tests: 302395,
+    testsPerOneMillion: 17652,
+    population: 17130699,
+    continent: Europe,
+    activePerOneMillion: 2272.24,
+    recoveredPerOneMillion: 0,
+    criticalPerOneMillion: 14.89
+
+
+    Last updated: 1590076993725,
+    Country: New Caledonia,
+    Country Info:
+      id: 540,
+      iso2: NC,
+      iso3: NCL,
+      Latitude: -21.5,
+      Longitude: 165.5,
+      <a>flag: https://disease.sh/assets/img/flags/nc.png</a>
+
+    Cases: 18,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 18,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 63,
+    deathsPerOneMillion: 0,
+    tests: 5454,
+    testsPerOneMillion: 19124,
+    population: 285185,
+    continent: Australia/Oceania,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 63.12,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993579,
+    Country: New Zealand,
+    Country Info:
+      id: 554,
+      iso2: NZ,
+      iso3: NZL,
+      Latitude: -41,
+      Longitude: 174,
+      <a>flag: https://disease.sh/assets/img/flags/nz.png</a>
+
+    Cases: 1503,
+    New Cases: 0,
+    Deaths: 21,
+    New Deaths: 0,
+    recovered: 1452,
+    active: 30,
+    critical: 1,
+    casesPerOneMillion: 312,
+    deathsPerOneMillion: 4,
+    tests: 244838,
+    testsPerOneMillion: 50819,
+    population: 4817799,
+    continent: Australia/Oceania,
+    activePerOneMillion: 6.23,
+    recoveredPerOneMillion: 301.38,
+    criticalPerOneMillion: 0.21
+
+
+    Last updated: 1590076993649,
+    Country: Nicaragua,
+    Country Info:
+      id: 558,
+      iso2: NI,
+      iso3: NIC,
+      Latitude: 13,
+      Longitude: -85,
+      <a>flag: https://disease.sh/assets/img/flags/ni.png</a>
+
+    Cases: 254,
+    New Cases: 0,
+    Deaths: 17,
+    New Deaths: 0,
+    recovered: 199,
+    active: 38,
+    critical: 0,
+    casesPerOneMillion: 38,
+    deathsPerOneMillion: 3,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 6615470,
+    continent: North America,
+    activePerOneMillion: 5.74,
+    recoveredPerOneMillion: 30.08,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993599,
+    Country: Niger,
+    Country Info:
+      id: 562,
+      iso2: NE,
+      iso3: NER,
+      Latitude: 16,
+      Longitude: 8,
+      <a>flag: https://disease.sh/assets/img/flags/ne.png</a>
+
+    Cases: 920,
+    New Cases: 0,
+    Deaths: 58,
+    New Deaths: 0,
+    recovered: 738,
+    active: 124,
+    critical: 0,
+    casesPerOneMillion: 38,
+    deathsPerOneMillion: 2,
+    tests: 5909,
+    testsPerOneMillion: 245,
+    population: 24093552,
+    continent: Africa,
+    activePerOneMillion: 5.15,
+    recoveredPerOneMillion: 30.63,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993535,
+    Country: Nigeria,
+    Country Info:
+      id: 566,
+      iso2: NG,
+      iso3: NGA,
+      Latitude: 10,
+      Longitude: 8,
+      <a>flag: https://disease.sh/assets/img/flags/ng.png</a>
+
+    Cases: 6677,
+    New Cases: 0,
+    Deaths: 200,
+    New Deaths: 0,
+    recovered: 1840,
+    active: 4637,
+    critical: 7,
+    casesPerOneMillion: 32,
+    deathsPerOneMillion: 1,
+    tests: 38231,
+    testsPerOneMillion: 186,
+    population: 205514164,
+    continent: Africa,
+    activePerOneMillion: 22.56,
+    recoveredPerOneMillion: 8.95,
+    criticalPerOneMillion: 0.03
+
+
+    Last updated: 1590076993519,
+    Country: Norway,
+    Country Info:
+      id: 578,
+      iso2: NO,
+      iso3: NOR,
+      Latitude: 62,
+      Longitude: 10,
+      <a>flag: https://disease.sh/assets/img/flags/no.png</a>
+
+    Cases: 8301,
+    New Cases: 20,
+    Deaths: 235,
+    New Deaths: 1,
+    recovered: 32,
+    active: 8034,
+    critical: 17,
+    casesPerOneMillion: 1533,
+    deathsPerOneMillion: 43,
+    tests: 223045,
+    testsPerOneMillion: 41179,
+    population: 5416449,
+    continent: Europe,
+    activePerOneMillion: 1483.26,
+    recoveredPerOneMillion: 5.91,
+    criticalPerOneMillion: 3.14
+
+
+    Last updated: 1590076993537,
+    Country: Oman,
+    Country Info:
+      id: 512,
+      iso2: OM,
+      iso3: OMN,
+      Latitude: 21,
+      Longitude: 57,
+      <a>flag: https://disease.sh/assets/img/flags/om.png</a>
+
+    Cases: 6370,
+    New Cases: 327,
+    Deaths: 30,
+    New Deaths: 0,
+    recovered: 1821,
+    active: 4519,
+    critical: 31,
+    casesPerOneMillion: 1251,
+    deathsPerOneMillion: 6,
+    tests: 72000,
+    testsPerOneMillion: 14143,
+    population: 5090680,
+    continent: Asia,
+    activePerOneMillion: 887.7,
+    recoveredPerOneMillion: 357.71,
+    criticalPerOneMillion: 6.09
+
+
+    Last updated: 1590076993476,
+    Country: Pakistan,
+    Country Info:
+      id: 586,
+      iso2: PK,
+      iso3: PAK,
+      Latitude: 30,
+      Longitude: 70,
+      <a>flag: https://disease.sh/assets/img/flags/pk.png</a>
+
+    Cases: 48091,
+    New Cases: 2193,
+    Deaths: 1017,
+    New Deaths: 32,
+    recovered: 14155,
+    active: 32919,
+    critical: 111,
+    casesPerOneMillion: 218,
+    deathsPerOneMillion: 5,
+    tests: 429600,
+    testsPerOneMillion: 1949,
+    population: 220380264,
+    continent: Asia,
+    activePerOneMillion: 149.37,
+    recoveredPerOneMillion: 64.23,
+    criticalPerOneMillion: 0.5
+
+
+    Last updated: 1590076993637,
+    Country: Palestine,
+    Country Info:
+      id: 275,
+      iso2: PS,
+      iso3: PSE,
+      Latitude: 32,
+      Longitude: 35.25,
+      <a>flag: https://disease.sh/assets/img/flags/ps.png</a>
+
+    Cases: 398,
+    New Cases: 0,
+    Deaths: 2,
+    New Deaths: 0,
+    recovered: 346,
+    active: 50,
+    critical: 0,
+    casesPerOneMillion: 78,
+    deathsPerOneMillion: 0.4,
+    tests: 44876,
+    testsPerOneMillion: 8822,
+    population: 5087001,
+    continent: Asia,
+    activePerOneMillion: 9.83,
+    recoveredPerOneMillion: 68.02,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993515,
+    Country: Panama,
+    Country Info:
+      id: 591,
+      iso2: PA,
+      iso3: PAN,
+      Latitude: 9,
+      Longitude: -80,
+      <a>flag: https://disease.sh/assets/img/flags/pa.png</a>
+
+    Cases: 9977,
+    New Cases: 0,
+    Deaths: 287,
+    New Deaths: 0,
+    recovered: 6194,
+    active: 3496,
+    critical: 72,
+    casesPerOneMillion: 2317,
+    deathsPerOneMillion: 67,
+    tests: 52641,
+    testsPerOneMillion: 12223,
+    population: 4306796,
+    continent: North America,
+    activePerOneMillion: 811.74,
+    recoveredPerOneMillion: 1438.19,
+    criticalPerOneMillion: 16.72
+
+
+    Last updated: 1590076993739,
+    Country: Papua New Guinea,
+    Country Info:
+      id: 598,
+      iso2: PG,
+      iso3: PNG,
+      Latitude: -6,
+      Longitude: 147,
+      <a>flag: https://disease.sh/assets/img/flags/pg.png</a>
+
+    Cases: 8,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 8,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 0.9,
+    deathsPerOneMillion: 0,
+    tests: 2402,
+    testsPerOneMillion: 269,
+    population: 8926835,
+    continent: Australia/Oceania,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 0.9,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993603,
+    Country: Paraguay,
+    Country Info:
+      id: 600,
+      iso2: PY,
+      iso3: PRY,
+      Latitude: -23,
+      Longitude: -58,
+      <a>flag: https://disease.sh/assets/img/flags/py.png</a>
+
+    Cases: 833,
+    New Cases: 0,
+    Deaths: 11,
+    New Deaths: 0,
+    recovered: 242,
+    active: 580,
+    critical: 0,
+    casesPerOneMillion: 117,
+    deathsPerOneMillion: 2,
+    tests: 21542,
+    testsPerOneMillion: 3025,
+    population: 7122422,
+    continent: South America,
+    activePerOneMillion: 81.43,
+    recoveredPerOneMillion: 33.98,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993465,
+    Country: Peru,
+    Country Info:
+      id: 604,
+      iso2: PE,
+      iso3: PER,
+      Latitude: -10,
+      Longitude: -76,
+      <a>flag: https://disease.sh/assets/img/flags/pe.png</a>
+
+    Cases: 104020,
+    New Cases: 0,
+    Deaths: 3024,
+    New Deaths: 0,
+    recovered: 41968,
+    active: 59028,
+    critical: 869,
+    casesPerOneMillion: 3160,
+    deathsPerOneMillion: 92,
+    tests: 715423,
+    testsPerOneMillion: 21733,
+    population: 32918409,
+    continent: South America,
+    activePerOneMillion: 1793.16,
+    recoveredPerOneMillion: 1274.91,
+    criticalPerOneMillion: 26.4
+
+
+    Last updated: 1590076993510,
+    Country: Philippines,
+    Country Info:
+      id: 608,
+      iso2: PH,
+      iso3: PHL,
+      Latitude: 13,
+      Longitude: 122,
+      <a>flag: https://disease.sh/assets/img/flags/ph.png</a>
+
+    Cases: 13434,
+    New Cases: 213,
+    Deaths: 846,
+    New Deaths: 4,
+    recovered: 3000,
+    active: 9588,
+    critical: 81,
+    casesPerOneMillion: 123,
+    deathsPerOneMillion: 8,
+    tests: 267417,
+    testsPerOneMillion: 2444,
+    population: 109411860,
+    continent: Asia,
+    activePerOneMillion: 87.63,
+    recoveredPerOneMillion: 27.42,
+    criticalPerOneMillion: 0.74
+
+
+    Last updated: 1590076993497,
+    Country: Poland,
+    Country Info:
+      id: 616,
+      iso2: PL,
+      iso3: POL,
+      Latitude: 52,
+      Longitude: 20,
+      <a>flag: https://disease.sh/assets/img/flags/pl.png</a>
+
+    Cases: 20143,
+    New Cases: 404,
+    Deaths: 972,
+    New Deaths: 10,
+    recovered: 8452,
+    active: 10719,
+    critical: 160,
+    casesPerOneMillion: 532,
+    deathsPerOneMillion: 26,
+    tests: 697230,
+    testsPerOneMillion: 18420,
+    population: 37851101,
+    continent: Europe,
+    activePerOneMillion: 283.19,
+    recoveredPerOneMillion: 223.3,
+    criticalPerOneMillion: 4.23
+
+
+    Last updated: 1590076993487,
+    Country: Portugal,
+    Country Info:
+      id: 620,
+      iso2: PT,
+      iso3: PRT,
+      Latitude: 39.5,
+      Longitude: -8,
+      <a>flag: https://disease.sh/assets/img/flags/pt.png</a>
+
+    Cases: 29912,
+    New Cases: 252,
+    Deaths: 1277,
+    New Deaths: 14,
+    recovered: 6452,
+    active: 22183,
+    critical: 93,
+    casesPerOneMillion: 2933,
+    deathsPerOneMillion: 125,
+    tests: 674000,
+    testsPerOneMillion: 66079,
+    population: 10199902,
+    continent: Europe,
+    activePerOneMillion: 2174.82,
+    recoveredPerOneMillion: 632.56,
+    criticalPerOneMillion: 9.12
+
+
+    Last updated: 1590076993480,
+    Country: Qatar,
+    Country Info:
+      id: 634,
+      iso2: QA,
+      iso3: QAT,
+      Latitude: 25.5,
+      Longitude: 51.25,
+      <a>flag: https://disease.sh/assets/img/flags/qa.png</a>
+
+    Cases: 38651,
+    New Cases: 1554,
+    Deaths: 17,
+    New Deaths: 1,
+    recovered: 7288,
+    active: 31346,
+    critical: 171,
+    casesPerOneMillion: 13442,
+    deathsPerOneMillion: 6,
+    tests: 175482,
+    testsPerOneMillion: 61031,
+    population: 2875313,
+    continent: Asia,
+    activePerOneMillion: 10901.77,
+    recoveredPerOneMillion: 2534.68,
+    criticalPerOneMillion: 59.47
+
+
+    Last updated: 1590076993503,
+    Country: Romania,
+    Country Info:
+      id: 642,
+      iso2: RO,
+      iso3: ROU,
+      Latitude: 46,
+      Longitude: 25,
+      <a>flag: https://disease.sh/assets/img/flags/ro.png</a>
+
+    Cases: 17585,
+    New Cases: 198,
+    Deaths: 1151,
+    New Deaths: 4,
+    recovered: 10581,
+    active: 5853,
+    critical: 203,
+    casesPerOneMillion: 913,
+    deathsPerOneMillion: 60,
+    tests: 342466,
+    testsPerOneMillion: 17789,
+    population: 19251223,
+    continent: Europe,
+    activePerOneMillion: 304.03,
+    recoveredPerOneMillion: 549.63,
+    criticalPerOneMillion: 10.54
+
+
+    Last updated: 1590076993448,
+    Country: Russia,
+    Country Info:
+      id: 643,
+      iso2: RU,
+      iso3: RUS,
+      Latitude: 60,
+      Longitude: 100,
+      <a>flag: https://disease.sh/assets/img/flags/ru.png</a>
+
+    Cases: 317554,
+    New Cases: 8849,
+    Deaths: 3099,
+    New Deaths: 127,
+    recovered: 92681,
+    active: 221774,
+    critical: 2300,
+    casesPerOneMillion: 2176,
+    deathsPerOneMillion: 21,
+    tests: 7840880,
+    testsPerOneMillion: 53731,
+    population: 145927633,
+    continent: Europe,
+    activePerOneMillion: 1519.75,
+    recoveredPerOneMillion: 635.12,
+    criticalPerOneMillion: 15.76
+
+
+    Last updated: 1590076993648,
+    Country: Rwanda,
+    Country Info:
+      id: 646,
+      iso2: RW,
+      iso3: RWA,
+      Latitude: -2,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/rw.png</a>
+
+    Cases: 314,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 216,
+    active: 98,
+    critical: 0,
+    casesPerOneMillion: 24,
+    deathsPerOneMillion: 0,
+    tests: 53317,
+    testsPerOneMillion: 4129,
+    population: 12912915,
+    continent: Africa,
+    activePerOneMillion: 7.59,
+    recoveredPerOneMillion: 16.73,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993627,
+    Country: Réunion,
+    Country Info:
+      id: 638,
+      iso2: RE,
+      iso3: REU,
+      Latitude: -21.1,
+      Longitude: 55.6,
+      <a>flag: https://disease.sh/assets/img/flags/re.png</a>
+
+    Cases: 449,
+    New Cases: 2,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 411,
+    active: 37,
+    critical: 2,
+    casesPerOneMillion: 502,
+    deathsPerOneMillion: 1,
+    tests: 17200,
+    testsPerOneMillion: 19227,
+    population: 894592,
+    continent: Africa,
+    activePerOneMillion: 41.36,
+    recoveredPerOneMillion: 459.43,
+    criticalPerOneMillion: 2.24
+
+
+    Last updated: 1590076993512,
+    Country: S. Korea,
+    Country Info:
+      id: 410,
+      iso2: KR,
+      iso3: KOR,
+      Latitude: 37,
+      Longitude: 127.5,
+      <a>flag: https://disease.sh/assets/img/flags/kr.png</a>
+
+    Cases: 11122,
+    New Cases: 12,
+    Deaths: 264,
+    New Deaths: 1,
+    recovered: 10135,
+    active: 723,
+    critical: 15,
+    casesPerOneMillion: 217,
+    deathsPerOneMillion: 5,
+    tests: 788684,
+    testsPerOneMillion: 15385,
+    population: 51264360,
+    continent: Asia,
+    activePerOneMillion: 14.1,
+    recoveredPerOneMillion: 197.7,
+    criticalPerOneMillion: 0.29
+
+
+    Last updated: 1590076993730,
+    Country: Saint Kitts and Nevis,
+    Country Info:
+      id: 659,
+      iso2: KN,
+      iso3: KNA,
+      Latitude: 17.3333,
+      Longitude: -62.75,
+      <a>flag: https://disease.sh/assets/img/flags/kn.png</a>
+
+    Cases: 15,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 15,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 282,
+    deathsPerOneMillion: 0,
+    tests: 391,
+    testsPerOneMillion: 7356,
+    population: 53157,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 282.18,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993726,
+    Country: Saint Lucia,
+    Country Info:
+      id: 662,
+      iso2: LC,
+      iso3: LCA,
+      Latitude: 13.8833,
+      Longitude: -61.1333,
+      <a>flag: https://disease.sh/assets/img/flags/lc.png</a>
+
+    Cases: 18,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 18,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 98,
+    deathsPerOneMillion: 0,
+    tests: 786,
+    testsPerOneMillion: 4283,
+    population: 183534,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 98.07,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993714,
+    Country: Saint Martin,
+    Country Info:
+      id: 663,
+      iso2: MF,
+      iso3: MAF,
+      Latitude: 18.11,
+      Longitude: -63.03,
+      <a>flag: https://disease.sh/assets/img/flags/mf.png</a>
+
+    Cases: 40,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 33,
+    active: 4,
+    critical: 1,
+    casesPerOneMillion: 1037,
+    deathsPerOneMillion: 78,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 38588,
+    continent: North America,
+    activePerOneMillion: 103.66,
+    recoveredPerOneMillion: 855.19,
+    criticalPerOneMillion: 25.91
+
+
+    Last updated: 1590076993744,
+    Country: Saint Pierre Miquelon,
+    Country Info:
+      id: 666,
+      iso2: PM,
+      iso3: SPM,
+      Latitude: 46.8333,
+      Longitude: -56.3333,
+      <a>flag: https://disease.sh/assets/img/flags/pm.png</a>
+
+    Cases: 1,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 1,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 173,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 5797,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 172.5,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993727,
+    Country: Saint Vincent and the Grenadines,
+    Country Info:
+      id: 670,
+      iso2: VC,
+      iso3: VCT,
+      Latitude: 13.25,
+      Longitude: -61.2,
+      <a>flag: https://disease.sh/assets/img/flags/vc.png</a>
+
+    Cases: 18,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 14,
+    active: 4,
+    critical: 0,
+    casesPerOneMillion: 162,
+    deathsPerOneMillion: 0,
+    tests: 175,
+    testsPerOneMillion: 1578,
+    population: 110901,
+    continent: North America,
+    activePerOneMillion: 36.07,
+    recoveredPerOneMillion: 126.24,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993615,
+    Country: San Marino,
+    Country Info:
+      id: 674,
+      iso2: SM,
+      iso3: SMR,
+      Latitude: 43.7667,
+      Longitude: 12.4167,
+      <a>flag: https://disease.sh/assets/img/flags/sm.png</a>
+
+    Cases: 658,
+    New Cases: 2,
+    Deaths: 41,
+    New Deaths: 0,
+    recovered: 235,
+    active: 382,
+    critical: 1,
+    casesPerOneMillion: 19397,
+    deathsPerOneMillion: 1209,
+    tests: 3779,
+    testsPerOneMillion: 111399,
+    population: 33923,
+    continent: Europe,
+    activePerOneMillion: 11260.8,
+    recoveredPerOneMillion: 6927.45,
+    criticalPerOneMillion: 29.48
+
+
+    Last updated: 1590076993650,
+    Country: Sao Tome and Principe,
+    Country Info:
+      id: 678,
+      iso2: ST,
+      iso3: STP,
+      Latitude: 1,
+      Longitude: 7,
+      <a>flag: https://disease.sh/assets/img/flags/st.png</a>
+
+    Cases: 251,
+    New Cases: 0,
+    Deaths: 8,
+    New Deaths: 0,
+    recovered: 4,
+    active: 239,
+    critical: 0,
+    casesPerOneMillion: 1148,
+    deathsPerOneMillion: 37,
+    tests: 175,
+    testsPerOneMillion: 800,
+    population: 218675,
+    continent: Africa,
+    activePerOneMillion: 1092.95,
+    recoveredPerOneMillion: 18.29,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993469,
+    Country: Saudi Arabia,
+    Country Info:
+      id: 682,
+      iso2: SA,
+      iso3: SAU,
+      Latitude: 25,
+      Longitude: 45,
+      <a>flag: https://disease.sh/assets/img/flags/sa.png</a>
+
+    Cases: 65077,
+    New Cases: 2532,
+    Deaths: 351,
+    New Deaths: 12,
+    recovered: 36040,
+    active: 28686,
+    critical: 281,
+    casesPerOneMillion: 1873,
+    deathsPerOneMillion: 10,
+    tests: 651158,
+    testsPerOneMillion: 18738,
+    population: 34750295,
+    continent: Asia,
+    activePerOneMillion: 825.49,
+    recoveredPerOneMillion: 1037.11,
+    criticalPerOneMillion: 8.09
+
+
+    Last updated: 1590076993554,
+    Country: Senegal,
+    Country Info:
+      id: 686,
+      iso2: SN,
+      iso3: SEN,
+      Latitude: 14,
+      Longitude: -14,
+      <a>flag: https://disease.sh/assets/img/flags/sn.png</a>
+
+    Cases: 2812,
+    New Cases: 98,
+    Deaths: 30,
+    New Deaths: 0,
+    recovered: 1251,
+    active: 1531,
+    critical: 6,
+    casesPerOneMillion: 168,
+    deathsPerOneMillion: 2,
+    tests: 24599,
+    testsPerOneMillion: 1474,
+    population: 16689519,
+    continent: Africa,
+    activePerOneMillion: 91.73,
+    recoveredPerOneMillion: 74.96,
+    criticalPerOneMillion: 0.36
+
+
+    Last updated: 1590076993513,
+    Country: Serbia,
+    Country Info:
+      id: 688,
+      iso2: RS,
+      iso3: SRB,
+      Latitude: 44,
+      Longitude: 21,
+      <a>flag: https://disease.sh/assets/img/flags/rs.png</a>
+
+    Cases: 10919,
+    New Cases: 86,
+    Deaths: 237,
+    New Deaths: 2,
+    recovered: 5370,
+    active: 5312,
+    critical: 12,
+    casesPerOneMillion: 1249,
+    deathsPerOneMillion: 27,
+    tests: 203799,
+    testsPerOneMillion: 23315,
+    population: 8741130,
+    continent: Europe,
+    activePerOneMillion: 607.7,
+    recoveredPerOneMillion: 614.34,
+    criticalPerOneMillion: 1.37
+
+
+    Last updated: 1590076993736,
+    Country: Seychelles,
+    Country Info:
+      id: 690,
+      iso2: SC,
+      iso3: SYC,
+      Latitude: -4.5833,
+      Longitude: 55.6667,
+      <a>flag: https://disease.sh/assets/img/flags/sc.png</a>
+
+    Cases: 11,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 11,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 112,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 98279,
+    continent: Africa,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 111.93,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993617,
+    Country: Sierra Leone,
+    Country Info:
+      id: 694,
+      iso2: SL,
+      iso3: SLE,
+      Latitude: 8.5,
+      Longitude: -11.5,
+      <a>flag: https://disease.sh/assets/img/flags/sl.png</a>
+
+    Cases: 570,
+    New Cases: 0,
+    Deaths: 34,
+    New Deaths: 0,
+    recovered: 205,
+    active: 331,
+    critical: 0,
+    casesPerOneMillion: 72,
+    deathsPerOneMillion: 4,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 7957533,
+    continent: Africa,
+    activePerOneMillion: 41.6,
+    recoveredPerOneMillion: 25.76,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993489,
+    Country: Singapore,
+    Country Info:
+      id: 702,
+      iso2: SG,
+      iso3: SGP,
+      Latitude: 1.3667,
+      Longitude: 103.8,
+      <a>flag: https://disease.sh/assets/img/flags/sg.png</a>
+
+    Cases: 29812,
+    New Cases: 448,
+    Deaths: 23,
+    New Deaths: 1,
+    recovered: 12117,
+    active: 17672,
+    critical: 10,
+    casesPerOneMillion: 5100,
+    deathsPerOneMillion: 4,
+    tests: 294414,
+    testsPerOneMillion: 50369,
+    population: 5845139,
+    continent: Asia,
+    activePerOneMillion: 3023.37,
+    recoveredPerOneMillion: 2073,
+    criticalPerOneMillion: 1.71
+
+
+    Last updated: 1590076993702,
+    Country: Sint Maarten,
+    Country Info:
+      id: 534,
+      iso2: SX,
+      iso3: SXM,
+      Latitude: 18.02,
+      Longitude: -63.06,
+      <a>flag: https://disease.sh/assets/img/flags/sx.png</a>
+
+    Cases: 77,
+    New Cases: 0,
+    Deaths: 15,
+    New Deaths: 0,
+    recovered: 54,
+    active: 8,
+    critical: 7,
+    casesPerOneMillion: 1798,
+    deathsPerOneMillion: 350,
+    tests: 425,
+    testsPerOneMillion: 9925,
+    population: 42820,
+    continent: North America,
+    activePerOneMillion: 186.83,
+    recoveredPerOneMillion: 1261.09,
+    criticalPerOneMillion: 163.48
+
+
+    Last updated: 1590076993581,
+    Country: Slovakia,
+    Country Info:
+      id: 703,
+      iso2: SK,
+      iso3: SVK,
+      Latitude: 48.6667,
+      Longitude: 19.5,
+      <a>flag: https://disease.sh/assets/img/flags/sk.png</a>
+
+    Cases: 1502,
+    New Cases: 6,
+    Deaths: 28,
+    New Deaths: 0,
+    recovered: 1245,
+    active: 229,
+    critical: 3,
+    casesPerOneMillion: 275,
+    deathsPerOneMillion: 5,
+    tests: 151778,
+    testsPerOneMillion: 27801,
+    population: 5459353,
+    continent: Europe,
+    activePerOneMillion: 41.95,
+    recoveredPerOneMillion: 228.05,
+    criticalPerOneMillion: 0.55
+
+
+    Last updated: 1590076993584,
+    Country: Slovenia,
+    Country Info:
+      id: 705,
+      iso2: SI,
+      iso3: SVN,
+      Latitude: 46,
+      Longitude: 15,
+      <a>flag: https://disease.sh/assets/img/flags/si.png</a>
+
+    Cases: 1468,
+    New Cases: 0,
+    Deaths: 106,
+    New Deaths: 1,
+    recovered: 1340,
+    active: 22,
+    critical: 3,
+    casesPerOneMillion: 706,
+    deathsPerOneMillion: 51,
+    tests: 74228,
+    testsPerOneMillion: 35705,
+    population: 2078907,
+    continent: Europe,
+    activePerOneMillion: 10.58,
+    recoveredPerOneMillion: 644.57,
+    criticalPerOneMillion: 1.44
+
+
+    Last updated: 1590076993576,
+    Country: Somalia,
+    Country Info:
+      id: 706,
+      iso2: SO,
+      iso3: SOM,
+      Latitude: 10,
+      Longitude: 49,
+      <a>flag: https://disease.sh/assets/img/flags/so.png</a>
+
+    Cases: 1573,
+    New Cases: 0,
+    Deaths: 61,
+    New Deaths: 0,
+    recovered: 188,
+    active: 1324,
+    critical: 2,
+    casesPerOneMillion: 99,
+    deathsPerOneMillion: 4,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 15838153,
+    continent: Africa,
+    activePerOneMillion: 83.6,
+    recoveredPerOneMillion: 11.87,
+    criticalPerOneMillion: 0.13
+
+
+    Last updated: 1590076993500,
+    Country: South Africa,
+    Country Info:
+      id: 710,
+      iso2: ZA,
+      iso3: ZAF,
+      Latitude: -29,
+      Longitude: 24,
+      <a>flag: https://disease.sh/assets/img/flags/za.png</a>
+
+    Cases: 19137,
+    New Cases: 1134,
+    Deaths: 369,
+    New Deaths: 30,
+    recovered: 8950,
+    active: 9818,
+    critical: 119,
+    casesPerOneMillion: 323,
+    deathsPerOneMillion: 6,
+    tests: 525433,
+    testsPerOneMillion: 8872,
+    population: 59222219,
+    continent: Africa,
+    activePerOneMillion: 165.78,
+    recoveredPerOneMillion: 151.13,
+    criticalPerOneMillion: 2.01
+
+
+    Last updated: 1590076993624,
+    Country: South Sudan,
+    Country Info:
+      id: 728,
+      iso2: SS,
+      iso3: SSD,
+      Latitude: 6.8769,
+      Longitude: 31.3069,
+      <a>flag: https://disease.sh/assets/img/flags/ss.png</a>
+
+    Cases: 481,
+    New Cases: 191,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 4,
+    active: 473,
+    critical: 0,
+    casesPerOneMillion: 43,
+    deathsPerOneMillion: 0.4,
+    tests: 3356,
+    testsPerOneMillion: 300,
+    population: 11178612,
+    continent: Africa,
+    activePerOneMillion: 42.31,
+    recoveredPerOneMillion: 0.36,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993451,
+    Country: Spain,
+    Country Info:
+      id: 724,
+      iso2: ES,
+      iso3: ESP,
+      Latitude: 40,
+      Longitude: -4,
+      <a>flag: https://disease.sh/assets/img/flags/es.png</a>
+
+    Cases: 279524,
+    New Cases: 0,
+    Deaths: 27888,
+    New Deaths: 0,
+    recovered: 196958,
+    active: 54678,
+    critical: 1152,
+    casesPerOneMillion: 5979,
+    deathsPerOneMillion: 596,
+    tests: 3037840,
+    testsPerOneMillion: 64977,
+    population: 46752802,
+    continent: Europe,
+    activePerOneMillion: 1169.51,
+    recoveredPerOneMillion: 4212.75,
+    criticalPerOneMillion: 24.64
+
+
+    Last updated: 1590076993591,
+    Country: Sri Lanka,
+    Country Info:
+      id: 144,
+      iso2: LK,
+      iso3: LKA,
+      Latitude: 7,
+      Longitude: 81,
+      <a>flag: https://disease.sh/assets/img/flags/lk.png</a>
+
+    Cases: 1045,
+    New Cases: 17,
+    Deaths: 9,
+    New Deaths: 0,
+    recovered: 604,
+    active: 432,
+    critical: 1,
+    casesPerOneMillion: 49,
+    deathsPerOneMillion: 0.4,
+    tests: 47521,
+    testsPerOneMillion: 2220,
+    population: 21403273,
+    continent: Asia,
+    activePerOneMillion: 20.18,
+    recoveredPerOneMillion: 28.22,
+    criticalPerOneMillion: 0.05
+
+
+    Last updated: 1590076993740,
+    Country: St. Barth,
+    Country Info:
+      id: 652,
+      iso2: BL,
+      iso3: BLM,
+      Latitude: 17.89,
+      Longitude: -62.82,
+      <a>flag: https://disease.sh/assets/img/flags/bl.png</a>
+
+    Cases: 6,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 6,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 608,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 9874,
+    continent: North America,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 607.66,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993548,
+    Country: Sudan,
+    Country Info:
+      id: 736,
+      iso2: SD,
+      iso3: SDN,
+      Latitude: 15,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/sd.png</a>
+
+    Cases: 3138,
+    New Cases: 410,
+    Deaths: 121,
+    New Deaths: 10,
+    recovered: 309,
+    active: 2708,
+    critical: 0,
+    casesPerOneMillion: 72,
+    deathsPerOneMillion: 3,
+    tests: 281,
+    testsPerOneMillion: 6,
+    population: 43724769,
+    continent: Africa,
+    activePerOneMillion: 61.93,
+    recoveredPerOneMillion: 7.07,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993734,
+    Country: Suriname,
+    Country Info:
+      id: 740,
+      iso2: SR,
+      iso3: SUR,
+      Latitude: 4,
+      Longitude: -56,
+      <a>flag: https://disease.sh/assets/img/flags/sr.png</a>
+
+    Cases: 11,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 9,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 19,
+    deathsPerOneMillion: 2,
+    tests: 404,
+    testsPerOneMillion: 689,
+    population: 586035,
+    continent: South America,
+    activePerOneMillion: 1.71,
+    recoveredPerOneMillion: 15.36,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993653,
+    Country: Swaziland,
+    Country Info:
+      id: 748,
+      iso2: SZ,
+      iso3: SWZ,
+      Latitude: -26.5,
+      Longitude: 31.5,
+      <a>flag: https://disease.sh/assets/img/flags/sz.png</a>
+
+    Cases: 220,
+    New Cases: 3,
+    Deaths: 2,
+    New Deaths: 0,
+    recovered: 112,
+    active: 106,
+    critical: 0,
+    casesPerOneMillion: 190,
+    deathsPerOneMillion: 2,
+    tests: 4994,
+    testsPerOneMillion: 4310,
+    population: 1158790,
+    continent: Africa,
+    activePerOneMillion: 91.47,
+    recoveredPerOneMillion: 96.65,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993484,
+    Country: Sweden,
+    Country Info:
+      id: 752,
+      iso2: SE,
+      iso3: SWE,
+      Latitude: 62,
+      Longitude: 15,
+      <a>flag: https://disease.sh/assets/img/flags/se.png</a>
+
+    Cases: 32172,
+    New Cases: 649,
+    Deaths: 3871,
+    New Deaths: 40,
+    recovered: 4971,
+    active: 23330,
+    critical: 352,
+    casesPerOneMillion: 3188,
+    deathsPerOneMillion: 384,
+    tests: 209900,
+    testsPerOneMillion: 20798,
+    population: 10092199,
+    continent: Europe,
+    activePerOneMillion: 2311.69,
+    recoveredPerOneMillion: 492.56,
+    criticalPerOneMillion: 34.88
+
+
+    Last updated: 1590076993485,
+    Country: Switzerland,
+    Country Info:
+      id: 756,
+      iso2: CH,
+      iso3: CHE,
+      Latitude: 47,
+      Longitude: 8,
+      <a>flag: https://disease.sh/assets/img/flags/ch.png</a>
+
+    Cases: 30694,
+    New Cases: 36,
+    Deaths: 1893,
+    New Deaths: 1,
+    recovered: 27800,
+    active: 1001,
+    critical: 55,
+    casesPerOneMillion: 3549,
+    deathsPerOneMillion: 219,
+    tests: 361692,
+    testsPerOneMillion: 41826,
+    population: 8647484,
+    continent: Europe,
+    activePerOneMillion: 115.76,
+    recoveredPerOneMillion: 3214.81,
+    criticalPerOneMillion: 6.36
+
+
+    Last updated: 1590076993709,
+    Country: Syrian Arab Republic,
+    Country Info:
+      id: 760,
+      iso2: SY,
+      iso3: SYR,
+      Latitude: 35,
+      Longitude: 38,
+      <a>flag: https://disease.sh/assets/img/flags/sy.png</a>
+
+    Cases: 58,
+    New Cases: 0,
+    Deaths: 3,
+    New Deaths: 0,
+    recovered: 36,
+    active: 19,
+    critical: 0,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0.2,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 17448736,
+    continent: Asia,
+    activePerOneMillion: 1.09,
+    recoveredPerOneMillion: 2.06,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993628,
+    Country: Taiwan,
+    Country Info:
+      id: 158,
+      iso2: TW,
+      iso3: TWN,
+      Latitude: 23.5,
+      Longitude: 121,
+      <a>flag: https://disease.sh/assets/img/flags/tw.png</a>
+
+    Cases: 441,
+    New Cases: 1,
+    Deaths: 7,
+    New Deaths: 0,
+    recovered: 407,
+    active: 27,
+    critical: 0,
+    casesPerOneMillion: 19,
+    deathsPerOneMillion: 0.3,
+    tests: 70100,
+    testsPerOneMillion: 2944,
+    population: 23812039,
+    continent: Asia,
+    activePerOneMillion: 1.13,
+    recoveredPerOneMillion: 17.09,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993557,
+    Country: Tajikistan,
+    Country Info:
+      id: 762,
+      iso2: TJ,
+      iso3: TJK,
+      Latitude: 39,
+      Longitude: 71,
+      <a>flag: https://disease.sh/assets/img/flags/tj.png</a>
+
+    Cases: 2350,
+    New Cases: 210,
+    Deaths: 44,
+    New Deaths: 3,
+    recovered: 470,
+    active: 1836,
+    critical: 0,
+    casesPerOneMillion: 247,
+    deathsPerOneMillion: 5,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 9511704,
+    continent: Asia,
+    activePerOneMillion: 193.03,
+    recoveredPerOneMillion: 49.41,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993623,
+    Country: Tanzania,
+    Country Info:
+      id: 834,
+      iso2: TZ,
+      iso3: TZA,
+      Latitude: -6,
+      Longitude: 35,
+      <a>flag: https://disease.sh/assets/img/flags/tz.png</a>
+
+    Cases: 509,
+    New Cases: 0,
+    Deaths: 21,
+    New Deaths: 0,
+    recovered: 183,
+    active: 305,
+    critical: 7,
+    casesPerOneMillion: 9,
+    deathsPerOneMillion: 0.4,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 59522334,
+    continent: Africa,
+    activePerOneMillion: 5.12,
+    recoveredPerOneMillion: 3.07,
+    criticalPerOneMillion: 0.12
+
+
+    Last updated: 1590076993550,
+    Country: Thailand,
+    Country Info:
+      id: 764,
+      iso2: TH,
+      iso3: THA,
+      Latitude: 15,
+      Longitude: 100,
+      <a>flag: https://disease.sh/assets/img/flags/th.png</a>
+
+    Cases: 3037,
+    New Cases: 3,
+    Deaths: 56,
+    New Deaths: 0,
+    recovered: 2897,
+    active: 84,
+    critical: 61,
+    casesPerOneMillion: 44,
+    deathsPerOneMillion: 0.8,
+    tests: 328073,
+    testsPerOneMillion: 4701,
+    population: 69780672,
+    continent: Asia,
+    activePerOneMillion: 1.2,
+    recoveredPerOneMillion: 41.52,
+    criticalPerOneMillion: 0.87
+
+
+    Last updated: 1590076993719,
+    Country: Timor-Leste,
+    Country Info:
+      id: 626,
+      iso2: TL,
+      iso3: TLS,
+      Latitude: -8.55,
+      Longitude: 125.5167,
+      <a>flag: https://disease.sh/assets/img/flags/tl.png</a>
+
+    Cases: 24,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 24,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 18,
+    deathsPerOneMillion: 0,
+    tests: 738,
+    testsPerOneMillion: 561,
+    population: 1315452,
+    continent: Asia,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 18.24,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993642,
+    Country: Togo,
+    Country Info:
+      id: 768,
+      iso2: TG,
+      iso3: TGO,
+      Latitude: 8,
+      Longitude: 1.1667,
+      <a>flag: https://disease.sh/assets/img/flags/tg.png</a>
+
+    Cases: 340,
+    New Cases: 0,
+    Deaths: 12,
+    New Deaths: 0,
+    recovered: 110,
+    active: 218,
+    critical: 0,
+    casesPerOneMillion: 41,
+    deathsPerOneMillion: 1,
+    tests: 14196,
+    testsPerOneMillion: 1720,
+    population: 8255121,
+    continent: Africa,
+    activePerOneMillion: 26.41,
+    recoveredPerOneMillion: 13.33,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993686,
+    Country: Trinidad and Tobago,
+    Country Info:
+      id: 780,
+      iso2: TT,
+      iso3: TTO,
+      Latitude: 11,
+      Longitude: -61,
+      <a>flag: https://disease.sh/assets/img/flags/tt.png</a>
+
+    Cases: 116,
+    New Cases: 0,
+    Deaths: 8,
+    New Deaths: 0,
+    recovered: 107,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 83,
+    deathsPerOneMillion: 6,
+    tests: 2785,
+    testsPerOneMillion: 1991,
+    population: 1398987,
+    continent: North America,
+    activePerOneMillion: 0.71,
+    recoveredPerOneMillion: 76.48,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993590,
+    Country: Tunisia,
+    Country Info:
+      id: 788,
+      iso2: TN,
+      iso3: TUN,
+      Latitude: 34,
+      Longitude: 9,
+      <a>flag: https://disease.sh/assets/img/flags/tn.png</a>
+
+    Cases: 1045,
+    New Cases: 0,
+    Deaths: 47,
+    New Deaths: 0,
+    recovered: 862,
+    active: 136,
+    critical: 3,
+    casesPerOneMillion: 89,
+    deathsPerOneMillion: 4,
+    tests: 43723,
+    testsPerOneMillion: 3704,
+    population: 11804462,
+    continent: Africa,
+    activePerOneMillion: 11.52,
+    recoveredPerOneMillion: 73.02,
+    criticalPerOneMillion: 0.25
+
+
+    Last updated: 1590076993460,
+    Country: Turkey,
+    Country Info:
+      id: 792,
+      iso2: TR,
+      iso3: TUR,
+      Latitude: 39,
+      Longitude: 35,
+      <a>flag: https://disease.sh/assets/img/flags/tr.png</a>
+
+    Cases: 152587,
+    New Cases: 0,
+    Deaths: 4222,
+    New Deaths: 0,
+    recovered: 113987,
+    active: 34378,
+    critical: 877,
+    casesPerOneMillion: 1811,
+    deathsPerOneMillion: 50,
+    tests: 1696355,
+    testsPerOneMillion: 20138,
+    population: 84235031,
+    continent: Asia,
+    activePerOneMillion: 408.12,
+    recoveredPerOneMillion: 1353.2,
+    criticalPerOneMillion: 10.41
+
+
+    Last updated: 1590076993731,
+    Country: Turks and Caicos Islands,
+    Country Info:
+      id: 796,
+      iso2: TC,
+      iso3: TCA,
+      Latitude: 21.75,
+      Longitude: -71.5833,
+      <a>flag: https://disease.sh/assets/img/flags/tc.png</a>
+
+    Cases: 12,
+    New Cases: 0,
+    Deaths: 1,
+    New Deaths: 0,
+    recovered: 10,
+    active: 1,
+    critical: 0,
+    casesPerOneMillion: 310,
+    deathsPerOneMillion: 26,
+    tests: 109,
+    testsPerOneMillion: 2820,
+    population: 38656,
+    continent: North America,
+    activePerOneMillion: 25.87,
+    recoveredPerOneMillion: 258.69,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993492,
+    Country: UAE,
+    Country Info:
+      id: 784,
+      iso2: AE,
+      iso3: ARE,
+      Latitude: 24,
+      Longitude: 54,
+      <a>flag: https://disease.sh/assets/img/flags/ae.png</a>
+
+    Cases: 26004,
+    New Cases: 0,
+    Deaths: 233,
+    New Deaths: 0,
+    recovered: 11809,
+    active: 13962,
+    critical: 1,
+    casesPerOneMillion: 2633,
+    deathsPerOneMillion: 24,
+    tests: 1600923,
+    testsPerOneMillion: 162092,
+    population: 9876618,
+    continent: Asia,
+    activePerOneMillion: 1413.64,
+    recoveredPerOneMillion: 1195.65,
+    criticalPerOneMillion: 0.1
+
+
+    Last updated: 1590076993453,
+    Country: UK,
+    Country Info:
+      id: 826,
+      iso2: GB,
+      iso3: GBR,
+      Latitude: 54,
+      Longitude: -2,
+      <a>flag: https://disease.sh/assets/img/flags/gb.png</a>
+
+    Cases: 250908,
+    New Cases: 2615,
+    Deaths: 36042,
+    New Deaths: 338,
+    recovered: 0,
+    active: 214866,
+    critical: 1559,
+    casesPerOneMillion: 3698,
+    deathsPerOneMillion: 531,
+    tests: 3090566,
+    testsPerOneMillion: 45553,
+    population: 67846185,
+    continent: Europe,
+    activePerOneMillion: 3166.96,
+    recoveredPerOneMillion: 0,
+    criticalPerOneMillion: 22.98
+
+
+    Last updated: 1590076993445,
+    Country: USA,
+    Country Info:
+      id: 840,
+      iso2: US,
+      iso3: USA,
+      Latitude: 38,
+      Longitude: -97,
+      <a>flag: https://disease.sh/assets/img/flags/us.png</a>
+
+    Cases: 1599337,
+    New Cases: 6614,
+    Deaths: 95176,
+    New Deaths: 240,
+    recovered: 371279,
+    active: 1132882,
+    critical: 17815,
+    casesPerOneMillion: 4835,
+    deathsPerOneMillion: 288,
+    tests: 14218091,
+    testsPerOneMillion: 42983,
+    population: 330785250,
+    continent: North America,
+    activePerOneMillion: 3424.83,
+    recoveredPerOneMillion: 1122.42,
+    criticalPerOneMillion: 53.86
+
+
+    Last updated: 1590076993672,
+    Country: Uganda,
+    Country Info:
+      id: 800,
+      iso2: UG,
+      iso3: UGA,
+      Latitude: 1,
+      Longitude: 32,
+      <a>flag: https://disease.sh/assets/img/flags/ug.png</a>
+
+    Cases: 145,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 65,
+    active: 80,
+    critical: 0,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0,
+    tests: 78953,
+    testsPerOneMillion: 1733,
+    population: 45558511,
+    continent: Africa,
+    activePerOneMillion: 1.76,
+    recoveredPerOneMillion: 1.43,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993498,
+    Country: Ukraine,
+    Country Info:
+      id: 804,
+      iso2: UA,
+      iso3: UKR,
+      Latitude: 49,
+      Longitude: 32,
+      <a>flag: https://disease.sh/assets/img/flags/ua.png</a>
+
+    Cases: 19706,
+    New Cases: 476,
+    Deaths: 579,
+    New Deaths: 15,
+    recovered: 6227,
+    active: 12900,
+    critical: 249,
+    casesPerOneMillion: 450,
+    deathsPerOneMillion: 13,
+    tests: 257890,
+    testsPerOneMillion: 5893,
+    population: 43761557,
+    continent: Europe,
+    activePerOneMillion: 294.78,
+    recoveredPerOneMillion: 142.29,
+    criticalPerOneMillion: 5.69
+
+
+    Last updated: 1590076993609,
+    Country: Uruguay,
+    Country Info:
+      id: 858,
+      iso2: UY,
+      iso3: URY,
+      Latitude: -33,
+      Longitude: -56,
+      <a>flag: https://disease.sh/assets/img/flags/uy.png</a>
+
+    Cases: 746,
+    New Cases: 0,
+    Deaths: 20,
+    New Deaths: 0,
+    recovered: 588,
+    active: 138,
+    critical: 4,
+    casesPerOneMillion: 215,
+    deathsPerOneMillion: 6,
+    tests: 35630,
+    testsPerOneMillion: 10261,
+    population: 3472397,
+    continent: South America,
+    activePerOneMillion: 39.74,
+    recoveredPerOneMillion: 169.34,
+    criticalPerOneMillion: 1.15
+
+
+    Last updated: 1590076993551,
+    Country: Uzbekistan,
+    Country Info:
+      id: 860,
+      iso2: UZ,
+      iso3: UZB,
+      Latitude: 41,
+      Longitude: 64,
+      <a>flag: https://disease.sh/assets/img/flags/uz.png</a>
+
+    Cases: 2964,
+    New Cases: 25,
+    Deaths: 13,
+    New Deaths: 0,
+    recovered: 2407,
+    active: 544,
+    critical: 5,
+    casesPerOneMillion: 89,
+    deathsPerOneMillion: 0.4,
+    tests: 460000,
+    testsPerOneMillion: 13767,
+    population: 33412612,
+    continent: Asia,
+    activePerOneMillion: 16.28,
+    recoveredPerOneMillion: 72.04,
+    criticalPerOneMillion: 0.15
+
+
+    Last updated: 1590076993606,
+    Country: Venezuela,
+    Country Info:
+      id: 862,
+      iso2: VE,
+      iso3: VEN,
+      Latitude: 8,
+      Longitude: -66,
+      <a>flag: https://disease.sh/assets/img/flags/ve.png</a>
+
+    Cases: 824,
+    New Cases: 0,
+    Deaths: 10,
+    New Deaths: 0,
+    recovered: 262,
+    active: 552,
+    critical: 1,
+    casesPerOneMillion: 29,
+    deathsPerOneMillion: 0.4,
+    tests: 616562,
+    testsPerOneMillion: 21676,
+    population: 28444595,
+    continent: South America,
+    activePerOneMillion: 19.41,
+    recoveredPerOneMillion: 9.21,
+    criticalPerOneMillion: 0.04
+
+
+    Last updated: 1590076993647,
+    Country: Vietnam,
+    Country Info:
+      id: 704,
+      iso2: VN,
+      iso3: VNM,
+      Latitude: 21,
+      Longitude: 105.8,
+      <a>flag: https://disease.sh/assets/img/flags/vn.png</a>
+
+    Cases: 324,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 264,
+    active: 60,
+    critical: 2,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0,
+    tests: 275000,
+    testsPerOneMillion: 2828,
+    population: 97239013,
+    continent: Asia,
+    activePerOneMillion: 0.62,
+    recoveredPerOneMillion: 2.71,
+    criticalPerOneMillion: 0.02
+
+
+    Last updated: 1590076993741,
+    Country: Western Sahara,
+    Country Info:
+      id: 732,
+      iso2: EH,
+      iso3: ESH,
+      Latitude: 24.5,
+      Longitude: -13,
+      <a>flag: https://disease.sh/assets/img/flags/eh.png</a>
+
+    Cases: 6,
+    New Cases: 0,
+    Deaths: 0,
+    New Deaths: 0,
+    recovered: 6,
+    active: 0,
+    critical: 0,
+    casesPerOneMillion: 10,
+    deathsPerOneMillion: 0,
+    tests: 0,
+    testsPerOneMillion: 0,
+    population: 595543,
+    continent: Africa,
+    activePerOneMillion: 0,
+    recoveredPerOneMillion: 10.07,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993663,
+    Country: Yemen,
+    Country Info:
+      id: 887,
+      iso2: YE,
+      iso3: YEM,
+      Latitude: 15,
+      Longitude: 48,
+      <a>flag: https://disease.sh/assets/img/flags/ye.png</a>
+
+    Cases: 184,
+    New Cases: 0,
+    Deaths: 30,
+    New Deaths: 0,
+    recovered: 5,
+    active: 149,
+    critical: 0,
+    casesPerOneMillion: 6,
+    deathsPerOneMillion: 1,
+    tests: 120,
+    testsPerOneMillion: 4,
+    population: 29746579,
+    continent: Asia,
+    activePerOneMillion: 5.01,
+    recoveredPerOneMillion: 0.17,
+    criticalPerOneMillion: 0
+
+
+    Last updated: 1590076993604,
+    Country: Zambia,
+    Country Info:
+      id: 894,
+      iso2: ZM,
+      iso3: ZMB,
+      Latitude: -15,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/zm.png</a>
+
+    Cases: 832,
+    New Cases: 0,
+    Deaths: 7,
+    New Deaths: 0,
+    recovered: 197,
+    active: 628,
+    critical: 1,
+    casesPerOneMillion: 45,
+    deathsPerOneMillion: 0.4,
+    tests: 19014,
+    testsPerOneMillion: 1038,
+    population: 18319980,
+    continent: Africa,
+    activePerOneMillion: 34.28,
+    recoveredPerOneMillion: 10.75,
+    criticalPerOneMillion: 0.05
+
+
+    Last updated: 1590076993710,
+    Country: Zimbabwe,
+    Country Info:
+      id: 716,
+      iso2: ZW,
+      iso3: ZWE,
+      Latitude: -20,
+      Longitude: 30,
+      <a>flag: https://disease.sh/assets/img/flags/zw.png</a>
+
+    Cases: 48,
+    New Cases: 0,
+    Deaths: 4,
+    New Deaths: 0,
+    recovered: 18,
+    active: 26,
+    critical: 0,
+    casesPerOneMillion: 3,
+    deathsPerOneMillion: 0.3,
+    tests: 28019,
+    testsPerOneMillion: 1888,
+    population: 14837674,
+    continent: Africa,
+    activePerOneMillion: 1.75,
+    recoveredPerOneMillion: 1.21,
+    criticalPerOneMillion: 0
+  </p>
+  </noscript>
+  <script src="/app.1b738189.js"></script>
+  <script>
+    // When the user clicks on div, open the popup
+    var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".trigger");
+    var closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+      modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+      if (event.target === modal) {
+        toggleModal();
+      } else {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    }
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function show() {
+      document.getElementById("Dropdown1").classList.toggle("show");
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+  </script>
+</body>
+
+</html>
