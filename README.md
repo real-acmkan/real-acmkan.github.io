@@ -1,4 +1,7 @@
 # CovidMap
+
+Original Source Code by https://github.com/wobsoriano/covid3d
+
 3D Map of Covid, updated every day.
 
 # Change log
@@ -25,5 +28,5 @@
 ## 2020-04-28
 • Modified styling to mitigate resize issues with globe and info button
 
-## Original Source Code
+## (OLD) Original Source Code
 https://github.com/sorxrob/covid3d
